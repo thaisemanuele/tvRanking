@@ -5,24 +5,64 @@
     <meta charset="UTF-8">
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Main Page</title>
 </head>
 
 <body>
-    <header></header>
-    <input type="search" />
-    <nav id="navigator" class="navbar navbar-inverse navbar-fixed-top">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <header>
+        <div class="container-fluid">
+            <div  class="col-sm-1">
+                <img class="img-responsive" src="img/tv_series.png" alt="logo"/>
+            </div>
+            <div class="col-sm-6">
+                <h1> TV RANKING </h1>
+            </div>
+            <div class="col-sm-2 col-sm-offset-3 searchBox">
+                <input class="form-control input-sm" type="search" />
+                <a href="#" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-search"></span> Buscar 
+                </a> 
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigator" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Menu Principal</a></li>
+                    <li><a href="#">Categoria 1 </a></li>
+                    <li><a href="#">Categoria 2</a></li>
+                    <li><a href="#">Categoria 3</a></li>
+                </ul>
+            </div>
+        </div>
+       <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle Navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="#">Menu Principal</a>
+        <a href="#">Menu Principal</a> -->
     </nav>
-    <section></section>
-    <aside></aside>
-    <footer></footer>
+    
+    <div class="container-fluid">
+        <section>
+            <div class="col-sm-8">
+                <!-- conteudo -->
+            </div>
+        </section>
+        <aside>
+            <div class="col-sm-4">
+                <!-- conteudo relacionado -->
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        
+    </footer>
 
 </body>
 
