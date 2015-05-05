@@ -1,14 +1,13 @@
 
 .form-control {
   display: inline;
-  width: 60%;
+  width: 40%;
 }
 
 .searchBox{
 	height: 70px;
-	padding-top: 1.5vw;
+	padding-top: 1%;
+	text-align: center;
+
 }
 
-.img-responsive{
-	display: inline;
-}
