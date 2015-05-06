@@ -14,34 +14,55 @@
     /*text-align: center;*/
 }
 
-<<<<<<< HEAD
-.minSize{
-	min-width: 80px;
+<<<<<<< HEAD .minSize {
+    min-width: 80px;
 }
 
-.form-group .form-control{
-	width: 25%;
+.form-group .form-control {
+    width: 25%;
 }
 
-.centralize{
-	text-align: center;
+.centralize {
+    text-align: center;
 }
-
 /*para mudar cor da barra de navegacao mudar classes abaixo*/
 
-/*.navbar-inverse{
-  background-color: #222;
-  border-color: #080808;
+.navbar-inverse {
+    /*background-color: #222;*/
+    
+    background-color: #4D6676;
+    border-color: #6EBCD2;
+    /*border-color: #080808;*/
+}
+
+.navbar-inverse .navbar-brand {
+    /*color: #9d9d9d;*/
+    
+    background-color: #31859D;
+    color: #D8CA24;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #D8CA24;
+    background-color: #363F4C;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+    /* color: #9d9d9d; */
+    
+    color: #E1F2CE;
 }
+
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
-  background-color: transparent;
+    color: #D8CA24;
+    background-color: #363F4C;
+    font-weight: bold;
+    /*color: #fff;
+  background-color: transparent;*/
 }
+/*
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
