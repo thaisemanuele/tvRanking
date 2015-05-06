@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="tv/css/style.css" />
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div  class="col-sm-1">
+                <div class="tvNoiseContain minSize">
+                    <img src="img/tv.svg" alt="logo" class="tv">
+                    <div class="noiseContain">
+                        <div>  </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h1> TV RANKING </h1>
+            </div>
+            <div class="col-sm-4 col-sm-offset-3 searchBox">
+                <input class="form-control input-sm" type="search" />
+                <a href="#" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-search"></span> Buscar 
+                </a> 
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Menu Principal</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Ação</a>
+                    </li>
+                    <li><a href="#">Comédia</a>
+                    </li>
+                    <li><a href="#">Crime</a>
+                    </li>
+                    <li><a href="#">Drama</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="row-fluid">
+        <!-- <section> -->
+            <div class="col-sm-9">
+              <div class="row">
+                <div class="centralize">
+                    <h2> Cadastro </h2>
+                </div>
+            </div>
+            <div class="row">
+                <form class="col-sm-offset-4 form-horizontal">
+                    <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Nome</label>
+                            <input type="text" class="col-sm-3 form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                            <label for="birthday" class="col-sm-2 control-label">Nascimento</label>
+                            <input type="text" class="col-sm-3 form-control" id="birthday" placeholder="dd/mm/aaaa">
+                    </div> 
+                    <div class="form-group">
+                            <label for="city" class="col-sm-2 control-label">Cidade</label>
+                            <input type="text" class="col-sm-3 form-control" id="city">
+                    </div> 
+                    <div class="form-group">
+                            <label for="state" class="col-sm-2 control-label">Estado</label>
+                            <select class="col-sm-3 form-control">
+                                <option value="Acre">AC</option>
+                                <option value="Alagoas">AL</option>
+                                <option value="Amapa">AP</option>
+                                <option value="Amazonas">AM</option>
+                                <option value="Bahia">BA</option>
+                                <option value="Ceara">CE</option>
+                                <option value="Distrito Federal">DF</option>
+                                <option value="Espirito Santo">ES</option>
+                                <option value="Goias">GO</option>
+                                <option value="Maranhao">MA</option>
+                                <option value="Mato Grosso">MT</option>
+                                <option value="Mato Grosso do Sul">MS</option>
+                                <option value="Minas Gerais">MG</option>
+                                <option value="Para">PA</option>
+                                <option value="Paraiba">PB</option>
+                                <option value="Parana">PR</option>
+                                <option value="Pernambuco">PE</option>
+                                <option value="Piaui">PI</option>
+                                <option value="Rio de Janeiro">RJ</option>
+                                <option value="Rio Grande do Norte">RN</option>
+                                <option value="Rio Grande do Sul">RS</option>
+                                <option value="Rondonia">RO</option>
+                                <option value="Roraima">RR</option>
+                                <option value="Santa Catarina">SC</option>
+                                <option value="Sao Paulo">SP</option>
+                                <option value="Sergipe">SE</option>
+                                <option value="Tocantis">TO</option>
+                            </select>
+                    </div> 
+                    <div class="form-group">
+                            <label for="phone" class="col-sm-2 control-label">Telefone</label>
+                            <input type="tel" class="col-sm-3 form-control" id="phone" placeholder="(XX) XXXX-XXXX">
+                    </div> 
+                    <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email (Login)</label>
+                            <input type="email" class="col-sm-3 form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                            <label for="passw" class="col-sm-2 control-label">Senha</label>
+                            <input type="password" class="col-sm-3 form-control" id="passw">
+                    </div> 
+                    <div class="form-group">
+                            <label for="passw" class="col-sm-2 control-label">Confirmar Senha</label>
+                            <input type="password" class="col-sm-3 form-control" id="passw">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-4 centralize">
+                            <button type="submit" class="btn btn-default">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>    
+            </div>
+    <!-- </section> -->        
+    <!-- </aside> -->        
+            <div class="col-sm-3 sidebar">
+                <div class="col-sm-4 ">
+                    <!--Aside content-->
+                </div>
+            </div>
+    <!-- </aside> -->
+        </div>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
