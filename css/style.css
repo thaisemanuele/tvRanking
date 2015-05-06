@@ -12,6 +12,34 @@
 
 .minSize{
 	min-width: 80px;
-	/*text-align: center;*/
 }
 
+.form-group .form-control{
+	width: 25%;
+}
+
+.centralize{
+	text-align: center;
+}
+
+/*para mudar cor da barra de navegacao mudar classes abaixo*/
+
+.navbar-inverse{
+  background-color: #222;
+  border-color: #080808;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #9d9d9d;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #080808;
+}
