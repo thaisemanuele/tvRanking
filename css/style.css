@@ -8,6 +8,10 @@
 	height: 70px;
 	padding-top: 1%;
 	text-align: center;
+}
 
+.minSize{
+	min-width: 80px;
+	/*text-align: center;*/
 }
 
