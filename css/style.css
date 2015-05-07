@@ -4,7 +4,7 @@
 }
 
 .searchBox {
-    height: 70px;
+    height: 50px;
     padding-top: 1%;
     text-align: center;
 }
@@ -15,6 +15,10 @@
 
 .form-group .form-control {
     width: 25%;
+}
+
+.btn-primary {
+    margin-top: 10px;
 }
 
 .centralize {
