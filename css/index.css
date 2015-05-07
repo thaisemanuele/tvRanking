@@ -5,10 +5,29 @@
 
 .same-line {
     display: flex;
+    width: 110%;
 }
 
 .same-line article {
     width: 50%;
     margin-left: 10%;
     margin-top: 5%;
+    background-color:cadetblue;
+    display: flex;
+    padding: 1%;
+}
+
+article img{
+    display: inline;
+}
+
+.show-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.show-info img{
+    width: 30%;
+    height: 30%;
 }
