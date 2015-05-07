@@ -1,0 +1,14 @@
+.sidebar {
+    position: absolute;
+    right: 1px;
+}
+
+.same-line {
+    display: flex;
+}
+
+.same-line article {
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
