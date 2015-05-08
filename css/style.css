@@ -72,6 +72,10 @@
   background-color: #080808;
 */
 
+header {
+    background-color: rgba(95, 158, 160, 0.1);
+}
+
 .sidebar{
     background-color: #eaf2f5;
 

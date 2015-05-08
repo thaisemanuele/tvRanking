@@ -3,6 +3,10 @@
     right: 1px;
 }
 
+body {
+    background-color: floralwhite;
+}
+
 .show-img {
     min-width: 80px;
     padding: 5px;
