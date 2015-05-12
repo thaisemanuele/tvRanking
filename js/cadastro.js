@@ -65,11 +65,10 @@ function validateDate(){
 	if(date.substring(6) > now.getFullYear()-13){ //Ano maior que o atual
 		return false;
 	}
-	console.log(now.getFullYear()-13);
+	
 	if(date.substring(6) == now.getFullYear()-13 &&  //faz(fez) 13 anos esse ano
 		((date.substring(0,2) == (now.getMonth()+1) && date.substring(3,5) > now.getDate()) /*faz 13 anos esse mês mas num dia futuro*/
-			|| date.substring(0,2) > now.getMonth())) { /*faz 13 anos esse ano mas em mês futuro*/
-		alert("Data inválida");	
+			|| date.substring(0,2) > now.getMonth()+1)) { /*faz 13 anos esse ano mas em mês futuro*/
 		return false;	
 	}
 	return true;
@@ -78,7 +77,7 @@ function validateDate(){
 /*Função para validar a cidade*/
 function validateCity(){
 	var city = document.getElementById("city").value;
-	var validCity = new RegExp("^([a-zA-Z]*)+$");
+	var validCity = new RegExp("^([a-zA-Z]*)([a-zA-Z]*)*$");
 	return (validCity.test(city));
 }
 
@@ -122,58 +121,107 @@ function validatePhone(){
 }
 
 function validateEmail(){
-	var email = document.getElementById("email");
-	var validEmail = new RegExp(/[a-z]([a-z]|[0-9]|_|\.)*@([a-z])+([\.]([a-z])+)+/);
+	var email = document.getElementById("email").value;
+	var validEmail = new RegExp("^[a-z]([a-z]|[0-9]|_|\.)*@([a-z])+([\.]([a-z])+)+$");
 	return (validEmail.test(email));
+}
+
+function validatePassword(){
+	var password = document.getElementById("passw").value;
+	var num = new RegExp("^[0-9]$");
+	var downLetter = new RegExp("^[a-z]$");
+	var upLetter = new RegExp("^[A-Z]$");
+	var hasNumber = 0;
+	var hasDownLetter = 0;
+	var hasUpLetter = 0;
+	var hasSpecial = 0;
+	if(password.length < 8)
+		return false;
+	for (var i = 0; i < password.length; i++){ //varre string da senha para conferir se tem todos os requisitos
+		if (num.test(password.substring(i,i+1))){
+			hasNumber = 1;
+		}
+		else if (downLetter.test(password.substring(i,i+1))){
+			hasDownLetter = 1;
+		}
+		else if (upLetter.test(password.substring(i,i+1))){
+			hasUpLetter = 1;
+		}
+		else{
+			hasSpecial = 1;
+
+		}
+	}
+	return(hasNumber&&hasDownLetter&&hasUpLetter&&hasSpecial);
+}
+
+function confirmPassword(){
+	var password = document.getElementById("passw").value;
+	var confirm = document.getElementById("confirm").value;
+	if(confirm != password)
+		return false;
+	return true;
 }
 
 /*Função chamada para validar todos os campos do formulário*/
 function validateForm(){
 	if(!validateName()){
+		$("#nameBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#nameBox").append("<div class='alert alert-danger col-sm-6'><strong>Nome inválido. </strong>Esse campo deve ter nome e sobrenome, sem numeros ou caracteres especiais</div>"); 	
 	}
 	if(!validateDate()){
+		$("#birthdayBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#birthdayBox").append("<div class='alert alert-danger col-sm-6'><strong>Data inválida. </strong>Data deve ser no formato mm/dd/yyyy e pessoa deve ter mais de 13 anos</div>"); 	
 	}
 	if(!validateCity()){
+		$("#cityBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#cityBox").append("<div class='alert alert-danger col-sm-6'><strong>Cidade inválida. </strong>Campo cidade deve ter apenas caracteres. </div>"); 	
 	}
 	if(!validatePhone()){
+		$("#phoneBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#phoneBox").append("<div class='alert alert-danger col-sm-6'><strong>Telefone inválido. </strong>Campo telefone deve ter apenas números. </div>"); 	
 	}
 	if(!validateEmail()){
+		$("#emailBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#emailBox").append("<div class='alert alert-danger col-sm-6'><strong>Email inválido. </strong>Campo email deve ser no formato email@dominio.com(.br) </div>"); 	
+	}
+	if(!validatePassword()){
+		$("#passBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
+		$("#passBox").append("<div class='alert alert-danger col-sm-6'><strong>Senha inválida. </strong>Campo senha deve ter no mínimo 8 caracteres, sendo pelo menos 1 letra maiúscula, 1 caractere especial, 1 digito e 1 letra minúscula </div>"); 	
+	}
+	if(!confirmPassword()){
+		$("#confirmBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
+		$("#confirmBox").append("<div class='alert alert-danger col-sm-6'><strong>Confirmação errada. </strong>Campo confirmar senha deve ser igual ao campo senha.</div>"); 		
 	}
 }
 
-	
+/* Os comando abaixo deletam uma mensagem de erro referente ao campo que sera preenchido novamente */	
 $(document).ready(function(){
 	$("#name").focus(function(){
 		$("#nameBox .alert-danger").alert("close");
    	});  
-});
 
-$(document).ready(function(){
 	$("#birthday").focus(function(){
 		$("#birthdayBox .alert-danger").alert("close");
-   	});  
-});
+   	}); 
 
-$(document).ready(function(){
 	$("#city").focus(function(){
 		$("#cityBox .alert-danger").alert("close");
    	});  
-});
 
-$(document).ready(function(){
 	$("#phone").focus(function(){
 		$("#phoneBox .alert-danger").alert("close");
    	});  
-});
 
-$(document).ready(function(){
 	$("#email").focus(function(){
 		$("#emailBox .alert-danger").alert("close");
-   	});  
+   	}); 
+
+   	$("#passw").focus(function(){
+   		$("#passBox .alert-danger").alert("close");
+   	});
+   	$("#confirm").focus(function(){
+   		$("#confirmBox .alert-danger").alert("close");
+   	});
 });
     
