@@ -1,3 +1,17 @@
+.row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.container-fluid{
+    padding-right: 0px;
+}
+
+.col-sm-9{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 .form-control {
     display: inline;
     width: 40%;
