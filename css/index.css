@@ -16,6 +16,13 @@ body {
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
 }
 
+.page-header {
+    font-family: serif;
+    font-weight: bolder;
+    margin-left: 1%;
+    color: navy;
+}
+
 .col-md-5 {
     padding-right: 0;
 }
@@ -75,6 +82,10 @@ article img {
 a.compare:hover {
     color: antiquewhite;
     text-decoration: none;
+}
+
+.login-set {
+    width: 320px;
 }
 
 .rating-stars img {
