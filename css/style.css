@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-.navbar{
+.navbar {
     margin-bottom: 0px;
 }
 
@@ -48,6 +48,15 @@
 .navbar-inverse .navbar-brand:focus {
     color: #D8CA24;
     background-color: #363F4C;
+}
+
+li.active,
+{
+    color: #D8CA24;
+    cursor: default;
+    background-color: #363F4C;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -76,11 +85,14 @@ header {
     background-color: rgba(95, 158, 160, 0.1);
 }
 
-.sidebar{
+.sidebar {
     background-color: #eaf2f5;
-
 }
 
-html, body, .container-fluid, .row-fluid, .sidebar{
-    height: 100%; 
+html,
+body,
+.container-fluid,
+.row-fluid,
+.sidebar {
+    height: 100%;
 }
