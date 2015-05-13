@@ -96,3 +96,19 @@ a.compare:hover {
     min-width: 15px;
     max-width: 35px;
 }
+
+.marketing {
+    margin-top: 25%;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+.marketing-name{
+    color: white;
+    font-size: 1.6em;
+    font-family: cursive;
+}
+.destaque {
+    color: red;
+    font-family: fantasy;
+    font-size: 1.5em;
+}
