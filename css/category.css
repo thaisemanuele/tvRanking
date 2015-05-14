@@ -4,6 +4,11 @@ article{
     background-color: #31859D
 }
 
+.main-holder{
+    height: 680px;
+    overflow-y: scroll;
+}
+
 .rating-stars img {
     width: 16%;
     height: 16%;
