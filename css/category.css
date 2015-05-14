@@ -1,0 +1,45 @@
+article{
+    padding: 1%;
+    margin-bottom: 15px;
+    background-color: #31859D
+}
+
+.rating-stars img {
+    width: 16%;
+    height: 16%;
+    margin: 0;
+    padding-bottom: 5%;
+    min-width: 15px;
+    max-width: 35px;
+}
+
+.marketing {
+    margin-top: 25%;
+    font-size: 1.3em;
+    text-decoration: underline;
+}
+
+.destaque {
+    color: red;
+    font-family: fantasy;
+    font-size: 1.5em;
+}
+
+.show-img{
+    width: 210px;
+    height: 250px;
+}
+
+.show-title{
+    font-size: 2.2em;
+}
+
+.description p{
+    color: antiquewhite;
+}
+
+.more-info{
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+}

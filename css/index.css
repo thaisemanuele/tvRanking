@@ -103,9 +103,10 @@ a.compare:hover {
     text-decoration: underline;
 }
 .marketing-name{
-    color: white;
+    color: beige;
     font-size: 1.6em;
     font-family: cursive;
+    font-weight: bolder;
 }
 .destaque {
     color: red;
