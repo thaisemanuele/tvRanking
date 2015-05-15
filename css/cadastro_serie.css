@@ -1,0 +1,20 @@
+#plot	{
+	display: inline;
+    width: 50%;
+}
+
+/*.input-group .form-control {
+  width: 50%;
+}*/
+.input-group-md{
+	width: 50%;
+}
+
+.file-preview{
+	/*margin-left: 10px;*/
+	margin-right: 10px;
+}
+
+.next-upload{
+	margin-top: 1%;
+}
