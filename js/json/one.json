@@ -1,0 +1,14 @@
+{
+    "acao":
+        {
+            title:"Person of Interest",
+            rating:"4.5",
+            year:"2011",
+            duration:"43 min",
+            channel:"CBS",
+            status:"Em Continuidade",
+            description:"Ex-agente da CIA dado como morto é contratado por um bilionário misterioso para evitar crimes violentos antes que eles ocorram.",
+            reviews:"1",
+            image:"poi.jpg"
+        }
+}

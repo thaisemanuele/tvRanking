@@ -1,0 +1,125 @@
+[
+    {
+        "acao": [
+            {
+                "title": "Person of Interest",
+                "rating": "4.5",
+                "year": "2011",
+                "duration": "43 min",
+                "channel": "CBS",
+                "status": "Em Continuidade",
+                "description": "Ex-agente da CIA dado como morto é contratado por um bilionário misterioso para evitar crimes violentos antes que eles ocorram.",
+                "reviews": "1",
+                "image": "poi.jpg"
+        },
+
+            {
+                "title": "Arrow",
+                "rating": "4.0",
+                "year": "2012",
+                "duration": "43 min",
+                "channel": "CW Network",
+                "status": "Em Continuidade",
+                "description": "Oliver Queen sobrevive durante cinco anos em uma ilha e volta determinado a trazer justiça para a sua cidade.",
+                "reviews": "1",
+                "image": "arr.jpg"
+        },
+
+            {
+                "title": "Vikings",
+                "rating": "4.5",
+                "year": "2013",
+                "duration": "60 min",
+                "channel": "History Channel",
+                "status": "Em Continuidade",
+                "description": "Vikings acompanha a história de Ragnar Lothbrok, que se levanta para tornar-se rei das tribos vikings.",
+                "reviews": "1",
+                "image": "vik.jpg"
+        },
+
+            {
+                "title": "Doctor Who",
+                "rating": "4.5",
+                "year": "2005",
+                "duration": "45 min",
+                "channel": "BBC",
+                "status": "Em Continuidade",
+                "description": "Um doutor alienígena que viaja pelo espaço-tempo, Em vez de morrer, ele é capaz de regenerar-se em um novo corpo.",
+                "reviews": "1",
+                "image": "dw.jpg"
+        },
+
+            {
+                "title": "Marvel's Agents of S.H.I.E.L.D",
+                "rating": "3.5",
+                "year": "2013",
+                "duration": "43 min",
+                "channel": "ABC",
+                "status": "Em Continuidade",
+                "description": "Um time de Agentes da S.H.I.E.L.D. investigando o novo, o estranho e o desconhecido ao redor do mundo.",
+                "reviews": "1",
+                "image": "maos.jpg"
+        },
+
+            {
+                "title": "Continuum",
+                "rating": "3.5",
+                "year": "2012",
+                "duration": "60 min",
+                "channel": "Reunion Pictures",
+                "status": "Em Continuidade",
+                "description": "Uma oficial do serviço de proteção de Vancouver é transportada de 2077 para 2012 com a intenção de mudar o futuro",
+                "reviews": "1",
+                "image": "cnuum.jpg"
+        },
+
+            {
+                "title": "Chicago P.D.",
+                "rating": "4.0",
+                "year": "2014",
+                "duration": "60 min",
+                "channel": "Wolf Films",
+                "status": "Em Continuidade",
+                "description": "Dos mesmos criadores de Chicago Fire, Chicago P.D. é um drama policial sobre um homem e uma mulher que fazem de tudo para proteger sua comunidade",
+                "reviews": "1",
+                "image": "cpd.jpg"
+        },
+
+            {
+                "title": "The Flash",
+                "rating": "4.5",
+                "year": "2014",
+                "duration": "45 min",
+                "channel": "Warner Bros.",
+                "status": "Em Continuidade",
+                "description": "Depois de uma tempestade com um acelerador de partículas, o investigador Barry Allen é atingido por um raio e entra em coma, para acordar com super-poderes.",
+                "reviews": "1",
+                "image": "tflsh.jpg"
+        },
+
+            {
+                "title": "Dig",
+                "rating": "3.5",
+                "year": "2015",
+                "duration": "60 min",
+                "channel": "USA",
+                "status": "Finalizada",
+                "description": "Um agente do FBI começa uma investigação em Jerusalém e descobre algo que pode mudar o rumo da história da humanidade",
+                "reviews": "1",
+                "image": "dig.jpg"
+        },
+
+            {
+                "title": "Rogue",
+                "rating": "3.5",
+                "year": "2013",
+                "duration": "60 min",
+                "channel": "E1 Entertainment",
+                "status": "Em Continuidade",
+                "description": "A história de Grace, uma detetive disfarçada que é atormentada pela possibilidade que suas próprias ações tenham matado seu filho.",
+                "reviews": "1",
+                "image": "rog.jpg"
+        }
+        ]
+    }
+]

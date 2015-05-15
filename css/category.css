@@ -6,7 +6,7 @@ article{
 
 .main-holder{
     height: 680px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .rating-stars img {
