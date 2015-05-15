@@ -1,0 +1,30 @@
+[
+    {
+        "comedia": [
+            {
+                "title": "The Big Bang Theory",
+                "rating": "4.5",
+                "year": "2007",
+                "duration": "18 min",
+                "channel": "Chuck Lorre",
+                "status": "Em Continuidade",
+                "description": "Super-Inteligentes Sheldon e Leonard conhecem Penny, a vizinha, e descobrem que não sabem quase nada da vida fora do laboratório.",
+                "reviews": "1",
+                "image": "tbbt.jpg"
+            },
+            
+            {
+                "title": "How I met your Mother",
+                "rating": "4.5",
+                "year": "2005",
+                "duration": "22 min",
+                "channel": "20th Century Fox",
+                "status": "Finalizada",
+                "description": "No ano de 2030, Ted Mosby conta a sua filha e filho como conheceu a mãe deles.",
+                "reviews": "1",
+                "image": "himym.jpg"
+            }
+            
+        ]
+    }
+]
