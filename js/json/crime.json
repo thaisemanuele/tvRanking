@@ -1,6 +1,6 @@
 [
     {
-        "comedia": [
+        "crime": [
             {
                 "title": "How to Get Away with Murder",
                 "rating": "4.5",
@@ -11,7 +11,80 @@
                 "description": "Annalise Keating é uma brilhante e carismática professora de direito, que se vê tendo que colocar em prática os ensinamentos das suas aulas",
                 "reviews": "1",
                 "image": "htgawm.jpg"
+            },
+            
+            {
+                "title": "Prison Break",
+                "rating": "4.5",
+                "year": "2005",
+                "duration": "42 min",
+                "channel": "20th Century Fox",
+                "status": "Finalizada",
+                "description": "Michael Scofield é propositalmente encarcerado em uma penitenciária estatal para libertar seu irmão, condenado por um crime que não cometeu.",
+                "reviews": "1",
+                "image": "pbrk.jpg"
+            },
+            
+            {
+                "title": "Gotham",
+                "rating": "4.0",
+                "year": "2014",
+                "duration": "60 min",
+                "channel": "Fox",
+                "status": "Em Continuidade",
+                "description": "A série segue o detetive James Gordon, enquanto ele luta contra vilões e corrupção na Gotham pré-Batman.",
+                "reviews": "1",
+                "image": "gotham.jpg"
+            },
+            
+            {
+                "title": "Criminal Minds",
+                "rating": "3.5",
+                "year": "2005",
+                "duration": "42 min",
+                "channel": "CBS",
+                "status": "Em Continuidade",
+                "description": "Agentes especiais de um time do FBI especialistas em analisar mentes criminosas, enfrentando os criminosos mais perigosos do mundo",
+                "reviews": "1",
+                "image": "cminds.jpg"
+            },
+            
+            {
+                "title": "The Mentalist",
+                "rating": "4.5",
+                "year": "2008",
+                "duration": "43 min",
+                "channel": "CBS",
+                "status": "Finalizada",
+                "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
+                "reviews": "1",
+                "image": "tmtlst.jpg"
+            },
+            
+            {
+                "title": "Marvel's Daredevil",
+                "rating": "4.5",
+                "year": "2015",
+                "duration": "52 min",
+                "channel": "NetFlix",
+                "status": "Em continuidade",
+                "description": "Matt Murdock, que ficou cego na sua juventude, luta contra a injustiça durante o dia como advogado e durante a noite como super-herói.",
+                "reviews": "1",
+                "image": "msdd.jpg"
+            },
+            
+            {
+                "title": "Dexter",
+                "rating": "4.5",
+                "year": "2006",
+                "duration": "55 min",
+                "channel": "Showtime Networks",
+                "status": "Finalizada",
+                "description": "A história de um serial killer que trabalha como especialista forense. Ele passa o dia solucionando crimes e a noite cometendo-os",
+                "reviews": "1",
+                "image": "dex.jpg"
             }
+            
             
         ]
     }

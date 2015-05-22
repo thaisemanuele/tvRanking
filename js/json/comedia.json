@@ -59,6 +59,66 @@
                 "description": "A série explora os diferentes aspectos e tipos de famílias modernas.",
                 "reviews": "1",
                 "image": "modf.jpg"
+            },
+            
+            {
+                "title": "Better Call Saul",
+                "rating": "4.5",
+                "year": "2015",
+                "duration": "45 min",
+                "channel": "AMC",
+                "status": "Em Continuidade",
+                "description": "A história de quando o Saul Goodman é conhecido como Jimmy McGill, um advogado procurando definir o seu futuro.",
+                "reviews": "1",
+                "image": "bcs.jpg"
+            },
+            
+            {
+                "title": "Two and a Half Men",
+                "rating": "3.5",
+                "year": "2003",
+                "duration": "21 min",
+                "channel": "Warner Bros.",
+                "status": "Finalizada",
+                "description": "Charlie é um solteiro com uma casa de praia, um jaguar e jeito com mulheres. Seu estilo de vida muda quando seu irmão Alan e seu filho vão morar com ele",
+                "reviews": "1",
+                "image": "taahm.jpg"
+            },
+            
+            {
+                "title": "Glee",
+                "rating": "3.5",
+                "year": "2009",
+                "duration": "60 min",
+                "channel": "Fox",
+                "status": "Finalizada",
+                "description": "Enfrentando muitas críticas, um professor tem o desafio de mostrar o potencial de seus alunos no coral da escola.",
+                "reviews": "1",
+                "image": "glee.jpg"
+            },
+            
+            {
+                "title": "Man Seeking Woman",
+                "rating": "3.5",
+                "year": "2015",
+                "duration": "25 min",
+                "channel": "Broadway Video",
+                "status": "Em Continuidade",
+                "description": "A história de Josh Greenberg, um romântico desesperado na sua busca por amor.",
+                "reviews": "1",
+                "image": "msw.jpg"
+            },
+            
+             {
+                "title": "Everybody Hates Chris",
+                "rating": "3.5",
+                "year": "2005",
+                "duration": "19 min",
+                "channel": "CBS",
+                "status": "Finalizada",
+                "description": "Um adolescente negro nos anos 80, frequentando uma escola com a maioria branca. Inspirado nas narrativas de vida do comediante Chris Rock.",
+                "reviews": "1",
+                "image": "ehc.jpg"
             }
             
             
