@@ -83,6 +83,42 @@
                 "description": "A história de um serial killer que trabalha como especialista forense. Ele passa o dia solucionando crimes e a noite cometendo-os",
                 "reviews": "1",
                 "image": "dex.jpg"
+            },
+            
+             {
+                "title": "Better Call Saul",
+                "rating": "4.5",
+                "year": "2015",
+                "duration": "45 min",
+                "channel": "AMC",
+                "status": "Em Continuidade",
+                "description": "A história de quando o Saul Goodman é conhecido como Jimmy McGill, um advogado procurando definir o seu futuro.",
+                "reviews": "1",
+                "image": "bcs.jpg"
+            },
+            
+            {
+                "title": "Under the Dome",
+                "rating": "3.5",
+                "year": "2013",
+                "duration": "42 min",
+                "channel": "CBS",
+                "status": "Em Continuidade",
+                "description": "Um campo de força invisível e misterioso desce sobre uma cidade fictícia nos Estados Unidos, prendendo os moradores e separando-os do resto da civilização.",
+                "reviews": "1",
+                "image": "utd.jpg"
+            },
+            
+             {
+                "title": "The Black List",
+                "rating": "4.5",
+                "year": "2013",
+                "duration": "45 min",
+                "channel": "Sony Pictures",
+                "status": "Em Continuidade",
+                "description": "Um dos fugitivos mais procurados do FBI se rende e diz que tem o mesmo interesse do que o FBI, acabar com criminosos e terroristas.",
+                "reviews": "1",
+                "image": "tbl.jpg"
             }
             
             
