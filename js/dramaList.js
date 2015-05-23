@@ -44,6 +44,12 @@ $(document).ready(function () {
             data[0].drama.sort(SortByYear);
         } else if ($("#sortSelection").val() === "rating") {
             data[0].drama.sort(SortByRating);
+        } else if ($("#sortSelection").val() === "duration") {
+            data[0].drama.sort(SortByDuration);
+        } else if ($("#sortSelection").val() === "returning") {
+            data[0].drama.sort(SortByReturning);
+        } else if ($("#sortSelection").val() === "ended") {
+            data[0].drama.sort(SortByEnded);
         }
         return data;
     }
@@ -59,11 +65,30 @@ $(document).ready(function () {
         var bYear = b.year;
         return ((aYear < bYear) ? -1 : ((aYear > bYear) ? 1 : 0));
     }
-    
-     function SortByRating(a, b) {
+
+    function SortByRating(a, b) {
         var aRating = a.rating;
         var bRating = b.rating;
-        return ((aRating < bRating) ? -1 : ((aRating > bRating) ? 1 : 0));
+        return ((aRating > bRating) ? -1 : ((aRating < bRating) ? 1 : 0));
+    }
+
+    function SortByDuration(a, b) {
+        var aDur = a.duration;
+        var bDur = b.duration;
+        aDur = aDur.split(" ");
+        return ((aDur < bDur) ? -1 : ((aDur > bDur) ? 1 : 0));
+    }
+    
+    function SortByReturning(a, b) {
+        var aStatus = a.status;
+        var bStatus = b.status;
+        return ((aStatus < bStatus) ? -1 : ((aStatus > bStatus) ? 1 : 0));
+    }
+    
+    function SortByEnded(a, b) {
+        var aStatus = a.status;
+        var bStatus = b.status;
+        return ((aStatus > bStatus) ? -1 : ((aStatus < bStatus) ? 1 : 0));
     }
 
 });
