@@ -4,15 +4,13 @@ $(document).ready(function () {
     pageLoader();
 
 
-    $("#sortSelection").change(function() {
-       alert("status changed");
+    $("#sortSelection").change(function () {
         pageLoader();
     });
 
     function pageLoader() {
         $(".main-holder").html("");
         $.getJSON("js/json/drama.json", function (data) {
-            alert("calling sort");
             sortData(data);
             for (var i = 0; i < data[0].drama.length; i++) {
                 var rating = countStars(data[0].drama[i].rating);
@@ -44,6 +42,8 @@ $(document).ready(function () {
             data[0].drama.sort(SortByName);
         } else if ($("#sortSelection").val() === "year") {
             data[0].drama.sort(SortByYear);
+        } else if ($("#sortSelection").val() === "rating") {
+            data[0].drama.sort(SortByRating);
         }
         return data;
     }
@@ -55,11 +55,15 @@ $(document).ready(function () {
     }
 
     function SortByYear(a, b) {
-                       alert("by year");
-
         var aYear = a.year;
         var bYear = b.year;
         return ((aYear < bYear) ? -1 : ((aYear > bYear) ? 1 : 0));
+    }
+    
+     function SortByRating(a, b) {
+        var aRating = a.rating;
+        var bRating = b.rating;
+        return ((aRating < bRating) ? -1 : ((aRating > bRating) ? 1 : 0));
     }
 
 });

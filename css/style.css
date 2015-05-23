@@ -17,6 +17,16 @@
     width: 40%;
 }
 
+#liSelection > a:hover {
+    background-color: #4D6676;
+    border-color: #6EBCD2;
+    color: #E1F2CE;
+}
+
+#sortSelection{
+   color: black;
+}
+
 .searchBox {
     height: 50px;
     padding-top: 1%;

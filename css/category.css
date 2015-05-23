@@ -4,9 +4,13 @@ article{
     background-color: #31859D
 }
 
+section{
+    height: 680px;
+    overflow: auto;
+}
+
 .main-holder{
     height: 680px;
-    overflow-y: auto;
 }
 
 .rating-stars img {
