@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/serie.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/serie.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="tv/css/style.css" />
+ 
+    <title></title>
+</head>
+<body>
+   <header>
+        <div class="container-fluid">
+            <div class="col-sm-1">
+                <div class="tvNoiseContain minSize">
+                    <img src="img/tv.svg" alt="logo" class="tv">
+                    <div class="noiseContain">
+                        <div> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h1> TV RANKING </h1>
+            </div>
+
+            <div class="col-sm-4 searchBox">
+                <input class="form-control input-sm" type="search" />
+                <a href="#" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-search"></span> Buscar
+                </a>
+            </div>
+            <div class="col-sm-4 centralize login-set">
+                <button type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigator" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="index.html">Principal</a>
+                    </li>
+                    <li><a href="acao.html">Ação</a>
+                    </li>
+                    <li><a href="comedia.html">Comédia</a>
+                    </li>
+                    <li><a href="crime.html">Crime</a>
+                    </li>
+                    <li><a href="drama.html">Drama</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid row">
+        <section class="col-sm-9">
+            <div class="col-sm-12 main-holder">
+                <!-- conteudo -->
+            </div>
+            <div class="container-fluid row">   
+                <h2> Comentários: </h2>
+                <div class="comments">
+                </div>
+                <h4>Deixe um comentário abaixo sobre essa série:</h4>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">Nome Completo</label>
+                        <input id="name" type="text" class="col-sm-2 form-control"/>
+                    </div>
+                </form>
+                <textarea class= "form-horizontal" rows="6" cols="60" required="required">Escreva seu comentário aqui.</textarea>
+                <input class="btn btn-default col-sm-offset-4 col-sm-2 centralize" type="button" value="Enviar" onclick=""/>
+            </div>
+        </section>
+        <aside class=" col-sm-3 sidebar">
+        <div class="marketing col-sm-10 col-sm-offset-2">
+            <p>Anúncios</p>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-caption">Life is
+                            <span class="destaque">Colorful</span>
+                        </div>
+                        <img src="http://unsplash.it/g/200x200?random" alt="propaganda">
+                    </div>
+
+                    <div class="item">
+                       <div class="carousel-caption">Life is
+                            <span class="destaque">Clear</span>
+                        </div>
+                        <img src="http://unsplash.it/200x200?blur" alt="propaganda">
+                    </div>
+
+                    <div class="item">
+                       <div class="carousel-caption">Life is
+                            <span class="destaque">Awesome</span>
+                        </div>
+                        <img src="http://unsplash.it/200x200?random" alt="propaganda">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    </div>
+
+    <footer class="row">
+        <div class="col-sm-12"></div>
+
+    </footer>
+
+
+    
+</body>
+</html>
