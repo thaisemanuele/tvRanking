@@ -13,7 +13,6 @@ $(document).ready(function(){
                     data[0].acao[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[id].status + '</li></ul><div class="description"><p>' + data[0].acao[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
                 for(var i=0;i<data[0].acao[id].comments.length;i++)
                    $(".comments").append('<div class="comment"><p>Autor: '+ data[0].acao[id].comments[i].author +'</p><p>'+data[0].acao[id].comments[i].comment+'</p></div>');
-                $("title").append(data[0].acao[id].title);
             });
         }
 

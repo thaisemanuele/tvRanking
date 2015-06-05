@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="css/serie.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="tv/css/style.css" />
+    <script src="Bootstrap-Image-Gallery-3.1.1/js/img_gallery.js"></script>
+    <link rel="stylesheet" href="Bootstrap-Image-Gallery-3.1.1/css/img_gallery.css">
+    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <script src="Bootstrap-Image-Gallery-3.1.1/js/bootstrap-image-gallery.js"></script>
+    <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="Bootstrap-Image-Gallery-3.1.1/css/bootstrap-image-gallery.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title></title>
 </head>
 <body>
@@ -68,12 +75,14 @@
     </nav>
 
     <div class="container-fluid row">
-        <section class="col-sm-9">
+    <section class="col-sm-9">
             <div class="col-sm-12 main-holder">
                 <!-- conteudo -->
             </div>
-            <div class="container-fluid row">   
-                <h2> Comentários: </h2>
+            <div class="container-fluid row">
+                <h2> Galeria de imagens</h2>
+                <div id="links"></div>
+                <h2> Comentários</h2>
                 <div class="comments">
                 </div>
                 <h4>Deixe um comentário abaixo sobre essa série:</h4>
@@ -86,8 +95,8 @@
                 <textarea class= "form-horizontal col-sm-offset-2" rows="6" cols="60" required="required">Escreva seu comentário aqui.</textarea>
                 <input class="btn btn-default col-sm-offset-4 col-sm-2 centralize" type="button" value="Enviar" onclick=""/>
             </div>
-        </section>
-        <aside class=" col-sm-3 sidebar">
+    </section>
+    <aside class=" col-sm-3 sidebar">
         <div class="marketing col-sm-10 col-sm-offset-2">
             <p>Anúncios</p>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -127,10 +136,39 @@
 
     <footer class="row">
         <div class="col-sm-12"></div>
-
     </footer>
 
-
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
 </body>
 </html>

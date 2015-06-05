@@ -4,7 +4,7 @@ article{
 }
 
 section{
-    height: 680px;
+    height: 800px;
     overflow: auto;
 }
 
@@ -57,6 +57,7 @@ section{
     border-width: small;
     border-color: #E1F2CE;
     margin-bottom: 3%;
+    width: 70%;
 }
 
 
