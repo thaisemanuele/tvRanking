@@ -5,15 +5,22 @@ $(document).ready(function () {
     var labelArray = [];
     var ratingArray = [];
     $.getJSON("js/json/drama.json", function (dat) {
+        dat[0].drama.sort(SortByName);
         for (var i = 0; i < dat[0].drama.length; i++) {
             labelArray.push(dat[0].drama[i].title);
             ratingArray.push(dat[0].drama[i].rating);
-            console.log(i);
-            console.log(labelArray[i]);
-            console.log(ratingArray[i]);
+            $("#serie1").append("<option value='" + dat[0].drama[i].image + "'>" + dat[0].drama[i].title + "</option>");
+            $("#serie2").append("<option value='" + dat[0].drama[i].image + "'>" + dat[0].drama[i].title + "</option>");
 
         }
-        console.log(labelArray);
+
+        $("#poster1").css("width", "270px");
+        $("#poster2").css("width", "270px");
+        $("#poster1").attr("src", "img/posters/"+dat[0].drama[0].image);
+        /*console.log($("#serie1").value);
+        
+        $("#poster1").attr("src","");*/
+
         var data = {
             labels: labelArray,
             datasets: [
@@ -52,5 +59,12 @@ $(document).ready(function () {
         });
 
     });
+
+    function SortByName(a, b) {
+        var aTitle = a.title.toLowerCase();
+        var bTitle = b.title.toLowerCase();
+        return ((aTitle < bTitle) ? -1 : ((aTitle > bTitle) ? 1 : 0));
+    }
+
 
 });
