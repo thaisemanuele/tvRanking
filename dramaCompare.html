@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="Chart.js-master/Chart.js"></script>
+    <script type="text/javascript" src="js/dramaChart.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/category.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="tv/css/style.css" />
+    <title>Compare</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="col-sm-1">
+                <div class="tvNoiseContain minSize">
+                    <img src="img/tv.svg" alt="logo" class="tv">
+                    <div class="noiseContain">
+                        <div> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h1> TV RANKING </h1>
+            </div>
+
+            <div class="col-sm-4 searchBox">
+                <input class="form-control input-sm" type="search" />
+                <a href="#" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-search"></span> Buscar
+                </a>
+            </div>
+            <div class="col-sm-4 centralize login-set">
+                <button type="button" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </div>
+    </header>
+
+    <nav id="navigator" class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-brand">Compare</div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="index.html">Principal</a>
+                    </li>
+                    <li><a href="acao.html">Ação</a>
+                    </li>
+                    <li><a href="comedia.html">Comédia</a>
+                    </li>
+                    <li><a href="crime.html">Crime</a>
+                    </li>
+                    <li><a href="drama.html">Drama</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <canvas  id="myChart" width="400" height="400"></canvas>
+    <canvas  id="compChart" width="300" height="300"></canvas>
+    <select name="serie 1" id="serie1"></select>
+    <select name="serie 2" id="serie2"></select>
+
+</body>
+
+</html>
