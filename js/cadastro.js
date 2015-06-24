@@ -165,34 +165,44 @@ function confirmPassword(){
 
 /*Função chamada para validar todos os campos do formulário*/
 function validateForm(){
+	var errorFlag;
 	if(!validateName()){
+		erroFlag = 1;
 		$("#nameBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#nameBox").append("<div class='alert alert-danger col-sm-6'><strong>Nome inválido. </strong>Esse campo deve ter nome e sobrenome, sem numeros ou caracteres especiais</div>"); 	
 	}
 	if(!validateDate()){
+		erroFlag = 1;
 		$("#birthdayBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#birthdayBox").append("<div class='alert alert-danger col-sm-6'><strong>Data inválida. </strong>Data deve ser no formato mm/dd/yyyy e pessoa deve ter mais de 13 anos</div>"); 	
 	}
 	if(!validateCity()){
+		erroFlag = 1;
 		$("#cityBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#cityBox").append("<div class='alert alert-danger col-sm-6'><strong>Cidade inválida. </strong>Campo cidade deve ter apenas caracteres. </div>"); 	
 	}
 	if(!validatePhone()){
+		erroFlag = 1;
 		$("#phoneBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#phoneBox").append("<div class='alert alert-danger col-sm-6'><strong>Telefone inválido. </strong>Campo telefone deve ter apenas números. </div>"); 	
 	}
 	if(!validateEmail()){
+		erroFlag = 1;
 		$("#emailBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#emailBox").append("<div class='alert alert-danger col-sm-6'><strong>Email inválido. </strong>Campo email deve ser no formato email@dominio.com(.br) </div>"); 	
 	}
 	if(!validatePassword()){
+		erroFlag = 1;
 		$("#passBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#passBox").append("<div class='alert alert-danger col-sm-6'><strong>Senha inválida. </strong>Campo senha deve ter no mínimo 8 caracteres, sendo pelo menos 1 letra maiúscula, 1 caractere especial, 1 digito e 1 letra minúscula </div>"); 	
 	}
 	if(!confirmPassword()){
+		erroFlag = 1;
 		$("#confirmBox .alert-danger").alert("close"); //apaga alerta, caso ja exista
 		$("#confirmBox").append("<div class='alert alert-danger col-sm-6'><strong>Confirmação errada. </strong>Campo confirmar senha deve ser igual ao campo senha.</div>"); 		
 	}
+	if(!errorFlag)
+		saveUser();
 }
 
 /* Os comando abaixo deletam uma mensagem de erro referente ao campo que sera preenchido novamente */	
@@ -224,4 +234,32 @@ $(document).ready(function(){
    		$("#confirmBox .alert-danger").alert("close");
    	});
 });
-    
+
+function saveUser(){
+	if(localStorage.getItem('UsersDataBase') == null){
+        $.ajaxSetup({ mimeType: "text/plain" });
+        $.getJSON("js/json/users.json", function (data) {
+            localStorage.setItem('UsersDataBase',JSON.stringify(data));
+        });
+    }
+	var users = JSON.parse(localStorage.getItem('UsersDataBase'));
+	var name = document.getElementById("name").value;
+	var birthdate = document.getElementById("birthday").value;
+	var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var phone = document.getElementById("phone").value;
+	var email = document.getElementById("email").value;
+	var password = document.getElementById("passw").value;
+    var newUser = {
+        "name": name,
+        "birthdate": birthdate,
+        "city": city,
+        "state": state,
+        "phone": phone,
+        "email": email,
+        "password": password
+    }
+    users.push(newUser); //insere no json
+    localStorage.setItem('UsersDataBase',JSON.stringify(users)); //atualiza sessao com novo json
+    location.href = "login.html";
+}

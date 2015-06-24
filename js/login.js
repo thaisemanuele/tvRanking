@@ -15,7 +15,7 @@ function Trylogin(){
 			console.log("entrou!");
 			localStorage.setItem("logged",1);
 			localStorage.setItem("user", users.name);
-			location.href="index.html"
+			location.href="index.html";
 			return;
 		}
 	}
