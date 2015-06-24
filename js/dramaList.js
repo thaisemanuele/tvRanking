@@ -14,9 +14,14 @@ $(document).ready(function () {
             sortData(data);
             for (var i = 0; i < data[0].drama.length; i++) {
                 var rating = countStars(data[0].drama[i].rating);
-                $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + data[0].drama[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title">' +
-                    data[0].drama[i].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].status + '</li></ul><div class="description"><p>' + data[0].drama[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
+                $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + data[0].drama[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ data[0].drama[i].id +'">' +
+                    data[0].drama[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[i].status + '</li></ul><div class="description"><p>' + data[0].drama[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
             } /*End For*/
+            for(var i = 0; i < data[0].drama.length; i++) /*Deixa clicar em quaquer dos titulos*/
+                document.getElementById(i).addEventListener("click", function(event){
+                    localStorage.setItem("id", event.target.id);
+                    window.open("serie_drama.html");
+                });
 
         });
 

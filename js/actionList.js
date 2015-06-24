@@ -21,7 +21,7 @@ $(document).ready(function () {
             for(var i = 0; i < data[0].acao.length; i++) /*Deixa clicar em quaquer dos titulos*/
                 document.getElementById(i).addEventListener("click", function(event){
                     localStorage.setItem("id", event.target.id);
-                    window.open("serie.html");
+                    window.open("serie_acao.html");
                 });
 
         });
