@@ -4,17 +4,20 @@ $(document).ready(function(){
 
         function pageLoader() {
             var id = localStorage.getItem("id"); 
-            console.log(id);
             $(".main-holder").html("");
-            $.ajaxSetup({ mimeType: "text/plain" });
-            $.getJSON("js/json/comedia.json", function (data) {
-                var rating = countStars(data[0].comedia[id].rating);
-                $("title").append(data[0].comedia[id].title);
-                $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + data[0].comedia[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
-                    data[0].comedia[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].comedia[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].comedia[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].comedia[id].status + '</li></ul><div class="description"><p>' + data[0].comedia[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
-                for(var i=0;i<data[0].comedia[id].comments.length;i++)
-                   $(".comments").append('<div class="comment"><p>Autor: '+ data[0].comedia[id].comments[i].author +'</p><p>'+data[0].comedia[id].comments[i].comment+'</p></div>');
-            });
+            if(localStorage.getItem('COmedyDataBase') == null){
+                $.ajaxSetup({ mimeType: "text/plain" });
+                $.getJSON("js/json/comedia.json", function (data) {
+                    localStorage.setItem('ComedyDataBase',JSON.stringify(data[0]));
+                });
+            }
+            var dados = JSON.parse(localStorage.getItem('ComedyDataBase'));
+                var rating = countStars(dados.comedia[id].rating);
+                $("title").append(dados.comedia[id].title);
+                $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + dados.comedia[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
+                    dados.comedia[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p>' + dados.comedia[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
+                for(var i=0;i<dados.comedia[id].comments.length;i++)
+                   $(".comments").append('<div class="comment"><p>Autor: '+ dados.comedia[id].comments[i].author +'</p><p>'+dados.comedia[id].comments[i].comment+'</p></div>');
         }
 
     function countStars(rating) {
@@ -38,17 +41,16 @@ $(function () {
 
         var linksContainer = $('#links');
         var id = localStorage.getItem("id"); 
-        $.getJSON("js/json/comedia.json", function (data) {
-            var number_images = data[0].comedia[id].images;
-            for(var i=0;i<number_images;i++){
+        var dados = JSON.parse(localStorage.getItem('ComedyDataBase'));
+        var number_images = dados.comedia[id].images;
+        for(var i=0;i<number_images;i++){
             $('<a/>')
                 .append($('<img class="small_image">').prop('src','img/gallery/comedia/'+id+'_'+i+'.jpg'))
                 .prop('href', 'img/gallery/comedia/'+id+'_'+i+'.jpg')
-                .prop('title', data[0].comedia[id].title)
+                .prop('title', dados.comedia[id].title)
                 .attr('data-gallery', '')
                 .appendTo(linksContainer);
-            }
-        });
+        }
 
     $('#borderless-checkbox').on('change', function () {
         var borderless = $(this).is(':checked');
@@ -111,3 +113,17 @@ $(function () {
 
 });
 
+// Escrever comentario
+function writeComment(){
+    var comment = document.getElementById("comment").value;
+    var author =  document.getElementById("name").value;
+    var dados = JSON.parse(localStorage.getItem('ComedyDataBase'));
+    var id = localStorage.getItem("id"); 
+    var newComment = {
+        "author" : author,
+        "comment" : comment
+    }
+    dados.comedia[id].comments.push(newComment);
+    localStorage.setItem('ComedyDataBase',JSON.stringify(dados));
+    location.reload();
+}

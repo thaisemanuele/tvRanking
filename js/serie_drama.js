@@ -4,17 +4,20 @@ $(document).ready(function(){
 
         function pageLoader() {
             var id = localStorage.getItem("id"); 
-            console.log(id);
             $(".main-holder").html("");
-            $.ajaxSetup({ mimeType: "text/plain" });
-            $.getJSON("js/json/drama.json", function (data) {
-                var rating = countStars(data[0].drama[id].rating);
-                $("title").append(data[0].drama[id].title);
-                $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + data[0].drama[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
-                    data[0].drama[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].drama[id].status + '</li></ul><div class="description"><p>' + data[0].drama[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
-                for(var i=0;i<data[0].drama[id].comments.length;i++)
-                   $(".comments").append('<div class="comment"><p>Autor: '+ data[0].drama[id].comments[i].author +'</p><p>'+data[0].drama[id].comments[i].comment+'</p></div>');
-            });
+            if(localStorage.getItem('DramaDataBase') == null){
+                $.ajaxSetup({ mimeType: "text/plain" });
+                $.getJSON("js/json/drama.json", function (data) {
+                    localStorage.setItem('DramaDataBase',JSON.stringify(data[0]));
+                });
+            }
+            var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+            var rating = countStars(dados.drama[id].rating);
+            $("title").append(dados.drama[id].title);
+            $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + dados.drama[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
+                dados.drama[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].status + '</li></ul><div class="description"><p>' + dados.drama[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
+            for(var i=0;i<dados.drama[id].comments.length;i++)
+                $(".comments").append('<div class="comment"><p>Autor: '+ dados.drama[id].comments[i].author +'</p><p>'+dados.drama[id].comments[i].comment+'</p></div>');
         }
 
     function countStars(rating) {
@@ -36,19 +39,18 @@ $(document).ready(function(){
 
 $(function () {
 
-        var linksContainer = $('#links');
-        var id = localStorage.getItem("id"); 
-        $.getJSON("js/json/drama.json", function (data) {
-            var number_images = data[0].drama[id].images;
-            for(var i=0;i<number_images;i++){
-            $('<a/>')
-                .append($('<img class="small_image">').prop('src','img/gallery/drama/'+id+'_'+i+'.jpg'))
-                .prop('href', 'img/gallery/drama/'+id+'_'+i+'.jpg')
-                .prop('title', data[0].drama[id].title)
-                .attr('data-gallery', '')
-                .appendTo(linksContainer);
-            }
-        });
+    var linksContainer = $('#links');
+    var id = localStorage.getItem("id"); 
+    var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+    var number_images = dados.drama[id].images;
+    for(var i=0;i<number_images;i++){
+        $('<a/>')
+            .append($('<img class="small_image">').prop('src','img/gallery/drama/'+id+'_'+i+'.jpg'))
+            .prop('href', 'img/gallery/drama/'+id+'_'+i+'.jpg')
+            .prop('title', dados.drama[id].title)
+            .attr('data-gallery', '')
+            .appendTo(linksContainer);
+    }
 
     $('#borderless-checkbox').on('change', function () {
         var borderless = $(this).is(':checked');
@@ -110,3 +112,17 @@ $(function () {
     });
 
 });
+
+function writeComment(){
+    var comment = document.getElementById("comment").value;
+    var author =  document.getElementById("name").value;
+    var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+    var id = localStorage.getItem("id"); 
+    var newComment = {
+        "author" : author,
+        "comment" : comment
+    }
+    dados.drama[id].comments.push(newComment);
+    localStorage.setItem('DramaDataBase',JSON.stringify(dados));
+    location.reload();
+}

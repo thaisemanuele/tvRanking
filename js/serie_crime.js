@@ -4,17 +4,21 @@ $(document).ready(function(){
 
         function pageLoader() {
             var id = localStorage.getItem("id"); 
-            console.log(id);
             $(".main-holder").html("");
             $.ajaxSetup({ mimeType: "text/plain" });
-            $.getJSON("js/json/crime.json", function (data) {
-                var rating = countStars(data[0].crime[id].rating);
-                $("title").append(data[0].crime[id].title);
-                $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + data[0].crime[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
-                    data[0].crime[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[id].status + '</li></ul><div class="description"><p>' + data[0].crime[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
-                for(var i=0;i<data[0].crime[id].comments.length;i++)
-                   $(".comments").append('<div class="comment"><p>Autor: '+ data[0].crime[id].comments[i].author +'</p><p>'+data[0].crime[id].comments[i].comment+'</p></div>');
-            });
+            if(localStorage.getItem('CrimeDataBase') == null){
+                $.ajaxSetup({ mimeType: "text/plain" });
+                $.getJSON("js/json/crime.json", function (data) {
+                    localStorage.setItem('CrimeDataBase',JSON.stringify(data[0]));
+                });
+            }
+            var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+            var rating = countStars(dados.crime[id].rating);
+            $("title").append(dados.crime[id].title);
+            $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + dados.crime[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
+                dados.crime[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].status + '</li></ul><div class="description"><p>' + dados.crime[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
+            for(var i=0;i<dados.crime[id].comments.length;i++)
+                $(".comments").append('<div class="comment"><p>Autor: '+ dados.crime[id].comments[i].author +'</p><p>'+dados.crime[id].comments[i].comment+'</p></div>');
         }
 
     function countStars(rating) {
@@ -35,20 +39,18 @@ $(document).ready(function(){
 
 
 $(function () {
-
-        var linksContainer = $('#links');
-        var id = localStorage.getItem("id"); 
-        $.getJSON("js/json/crime.json", function (data) {
-            var number_images = data[0].crime[id].images;
-            for(var i=0;i<number_images;i++){
-            $('<a/>')
-                .append($('<img class="small_image">').prop('src','img/gallery/crime/'+id+'_'+i+'.jpg'))
-                .prop('href', 'img/gallery/crime/'+id+'_'+i+'.jpg')
-                .prop('title', data[0].crime[id].title)
-                .attr('data-gallery', '')
-                .appendTo(linksContainer);
-            }
-        });
+    var linksContainer = $('#links');
+    var id = localStorage.getItem("id"); 
+    var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+    var number_images = dados.crime[id].images;
+    for(var i=0;i<number_images;i++){
+        $('<a/>')
+            .append($('<img class="small_image">').prop('src','img/gallery/crime/'+id+'_'+i+'.jpg'))
+            .prop('href', 'img/gallery/crime/'+id+'_'+i+'.jpg')
+            .prop('title', dados.crime[id].title)
+            .attr('data-gallery', '')
+            .appendTo(linksContainer);
+    }
 
     $('#borderless-checkbox').on('change', function () {
         var borderless = $(this).is(':checked');
@@ -110,3 +112,17 @@ $(function () {
     });
 
 });
+
+function writeComment(){
+    var comment = document.getElementById("comment").value;
+    var author =  document.getElementById("name").value;
+    var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+    var id = localStorage.getItem("id"); 
+    var newComment = {
+        "author" : author,
+        "comment" : comment
+    }
+    dados.crime[id].comments.push(newComment);
+    localStorage.setItem('CrimeDataBase',JSON.stringify(dados));
+    location.reload();
+}
