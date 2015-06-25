@@ -4,121 +4,161 @@
             {
                 "title": "Game of Thrones",
                 "rating": "4.5",
+                "id":"3000",
                 "year": "2011",
                 "duration": "60 min",
                 "channel": "HBO",
                 "status": "Em Continuidade",
                 "description": "Sete famílias nobres lutam para obter o controle do continente fictício de Westeros e as brigas transformam-se em uma verdadeira guerra.",
                 "reviews": "1",
-                "image": "got.jpg"
+                "image": "got.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Breaking Bad",
                 "rating": "4.5",
+                "id":"3001",
                 "year": "2008",
                 "duration": "45 min",
                 "channel": "AMC",
                 "status": "Finalizada",
                 "description": "Walter White é um professor de química diagnosticado com câncer de pulmão. Ele começa a vender drogas para assegurar o futuro de sua família antes de morrer.",
                 "reviews": "1",
-                "image": "brkb.jpg"
+                "image": "brkb.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "The Walking Dead",
                 "rating": "4.5",
+                "id":"3002",
                 "year": "2010",
                 "duration": "42 min",
                 "channel": "AMC",
                 "status": "Em Continuidade",
                 "description": "Uma epidemia de proporções apocalípticas varre a Terra, fazendo com que os mortos se levantem e se alimentem dos vivos.",
                 "reviews": "1",
-                "image": "twd.jpg"
+                "image": "twd.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
            {
                 "title": "House",
                 "rating": "4.5",
+                "id":"3003",
                 "year": "2004",
                 "duration": "42 min",
                 "channel": "Fox",
                 "status": "Finalizada",
                 "description": "O brilhante e sarcástico Dr. House, no desafio de resolver casos médicos que outros médicos desistem.",
                 "reviews": "1",
-                "image": "house.jpg"
+                "image": "house.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Suits",
                 "rating": "4.5",
+                "id":"3004",
                 "year": "2011",
                 "duration": "42 min",
                 "channel": "Universal Cable",
                 "status": "Em Continuidade",
                 "description": "Suits segue a história de Mike Ross, que desistiu da universidade e consegue acidentalmete um emprego em uma das melhores empresas de direito de Nova Iorque.",
                 "reviews": "1",
-                "image": "suits.jpg"
+                "image": "suits.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "The Mentalist",
                 "rating": "4.5",
+                "id":"3005",
                 "year": "2008",
                 "duration": "43 min",
                 "channel": "CBS",
                 "status": "Finalizada",
                 "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
                 "reviews": "1",
-                "image": "tmtlst.jpg"
+                "image": "tmtlst.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
              {
                 "title": "Revenge",
                 "rating": "3.5",
+                "id":"3006",
                 "year": "2011",
                 "duration": "43 min",
                 "channel": "ABC",
                 "status": "Finalizada",
                 "description": "Amanda Clarke se transforma em Emily Thorne e volta aos Hamptons para vingar a morte de seu pai, que foi acusado por um crime que não cometeu.",
                 "reviews": "1",
-                "image": "revg.jpg"
+                "image": "revg.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
            
             {
                 "title": "Lost",
                 "rating": "4.5",
+                "id":"3007",
                 "year": "2005",
                 "duration": "42 min",
                 "channel": "ABC",
                 "status": "Finalizada",
                 "description": "Um acidente com o vôo 815 leva os sobreviventes para uma ilha, onde logo eles percebem que não estão sozinhos.",
                 "reviews": "1",
-                "image": "lost.jpg"
+                "image": "lost.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
              {
                 "title": "The White Queen",
                 "rating": "3.5",
+                "id":"3008",
                 "year": "2013",
                 "duration": "60 min",
                 "channel": "BBC",
                 "status": "Finalizada",
                 "description": "Um conto de amor e perdas, sedução e enganação, traição e assassinato. A luta de três mulheres manipuladoras para chegar ao poder.",
                 "reviews": "1",
-                "image": "twq.jpg"
+                "image": "twq.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Fringe",
                 "rating": "4.5",
+                "id":"3009",
                 "year": "2008",
                 "duration": "43 min",
                 "channel": "Fox",
                 "status": "Finalizada",
                 "description": "Uma divisão do FBI que investiga casos misteriosos e inexplicáveis, alguns deles relacionados a um universo paralelo.",
                 "reviews": "1",
-                "image": "frg.jpg"
+                "image": "frg.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             }
             
             
