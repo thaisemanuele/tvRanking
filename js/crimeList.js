@@ -9,15 +9,24 @@ $(document).ready(function () {
 
     function pageLoader() {
         $(".main-holder").html("");
-        $.getJSON("js/json/crime.json", function (data) {
-            sortData(data);
-            for (var i = 0; i < data[0].crime.length; i++) {
-                var rating = countStars(data[0].crime[i].rating);
-                $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + data[0].crime[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title">' +
-                    data[0].crime[i].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].crime[i].status + '</li></ul><div class="description"><p>' + data[0].crime[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
+        if(localStorage.getItem('CrimeDataBase') == null){
+            $.ajaxSetup({ mimeType: "text/plain" });
+            $.getJSON("js/json/crime.json", function (data) {
+                localStorage.setItem('CrimeDataBase',JSON.stringify(data[0]));
+            });
+        }
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+            sortData(dados);
+            for (var i = 0; i < dados.crime.length; i++) {
+                var rating = countStars(dados.crime[i].rating);
+                $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + dados.crime[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ dados.crime[i].id +'">' +
+                    dados.crime[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[i].status + '</li></ul><div class="description"><p>' + dados.crime[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
             } /*End For*/
-
-        });
+            for(var i = 0; i < dados.crime.length; i++) /*Deixa clicar em quaquer dos titulos*/
+                document.getElementById(i).addEventListener("click", function(event){
+                    localStorage.setItem("id", event.target.id);
+                    window.open("serie_crime.html");
+                });
     }
 
     function countStars(rating) {
@@ -37,17 +46,17 @@ $(document).ready(function () {
     function sortData(data) {
 
         if ($("#sortSelection").val() === "alfa") {
-            data[0].crime.sort(SortByName);
+            data.crime.sort(SortByName);
         } else if ($("#sortSelection").val() === "year") {
-            data[0].crime.sort(SortByYear);
+            data.crime.sort(SortByYear);
         } else if ($("#sortSelection").val() === "rating") {
-            data[0].crime.sort(SortByRating);
+            data.crime.sort(SortByRating);
         } else if ($("#sortSelection").val() === "duration") {
-            data[0].crime.sort(SortByDuration);
+            data.crime.sort(SortByDuration);
         } else if ($("#sortSelection").val() === "returning") {
-            data[0].crime.sort(SortByReturning);
+            data.crime.sort(SortByReturning);
         } else if ($("#sortSelection").val() === "ended") {
-            data[0].crime.sort(SortByEnded);
+            data.crime.sort(SortByEnded);
         }
         return data;
     }

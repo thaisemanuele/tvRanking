@@ -4,121 +4,169 @@
             {
                 "title": "How to Get Away with Murder",
                 "rating": "4.5",
+                "id": "0",
                 "year": "2014",
                 "duration": "45 min",
                 "channel": "ABC",
                 "status": "Em Continuidade",
                 "description": "Annalise Keating é uma brilhante e carismática professora de direito, que se vê tendo que colocar em prática os ensinamentos das suas aulas",
                 "reviews": "1",
-                "image": "htgawm.jpg"
+                "image": "htgawm.jpg",
+                "images": "0",
+                "comments": [
+                    {
+                        "author": "Fulano",
+                        "comment": "Achei legal..."
+                    },
+                    {
+                        "author": "Fulano2",
+                        "comment": "Nao assisti..."
+                    }
+                ]
             },
             
             {
                 "title": "Prison Break",
                 "rating": "4.5",
+                "id": "1",
                 "year": "2005",
                 "duration": "42 min",
                 "channel": "20th Century Fox",
                 "status": "Finalizada",
                 "description": "Michael Scofield é propositalmente encarcerado em uma penitenciária estatal para libertar seu irmão, condenado por um crime que não cometeu.",
                 "reviews": "1",
-                "image": "pbrk.jpg"
+                "image": "pbrk.jpg",
+                "images": "2",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Gotham",
                 "rating": "4.0",
+                "id": "2",
                 "year": "2014",
                 "duration": "60 min",
                 "channel": "Fox",
                 "status": "Em Continuidade",
                 "description": "A série segue o detetive James Gordon, enquanto ele luta contra vilões e corrupção na Gotham pré-Batman.",
                 "reviews": "1",
-                "image": "gotham.jpg"
+                "image": "gotham.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Criminal Minds",
                 "rating": "3.5",
+                "id": "3",
                 "year": "2005",
                 "duration": "42 min",
                 "channel": "CBS",
                 "status": "Em Continuidade",
                 "description": "Agentes especiais de um time do FBI especialistas em analisar mentes criminosas, enfrentando os criminosos mais perigosos do mundo",
                 "reviews": "1",
-                "image": "cminds.jpg"
+                "image": "cminds.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "The Mentalist",
                 "rating": "4.5",
+                "id": "4",
                 "year": "2008",
                 "duration": "43 min",
                 "channel": "CBS",
                 "status": "Finalizada",
                 "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
                 "reviews": "1",
-                "image": "tmtlst.jpg"
+                "image": "tmtlst.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Marvel's Daredevil",
                 "rating": "4.5",
+                "id": "5",
                 "year": "2015",
                 "duration": "52 min",
                 "channel": "NetFlix",
                 "status": "Em continuidade",
                 "description": "Matt Murdock, que ficou cego na sua juventude, luta contra a injustiça durante o dia como advogado e durante a noite como super-herói.",
                 "reviews": "1",
-                "image": "msdd.jpg"
+                "image": "msdd.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Dexter",
                 "rating": "4.5",
+                "id": "6",
                 "year": "2006",
                 "duration": "55 min",
                 "channel": "Showtime Networks",
                 "status": "Finalizada",
                 "description": "A história de um serial killer que trabalha como especialista forense. Ele passa o dia solucionando crimes e a noite cometendo-os",
                 "reviews": "1",
-                "image": "dex.jpg"
+                "image": "dex.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
              {
                 "title": "Better Call Saul",
                 "rating": "4.5",
+                "id": "7",
                 "year": "2015",
                 "duration": "45 min",
                 "channel": "AMC",
                 "status": "Em Continuidade",
                 "description": "A história de quando o Saul Goodman é conhecido como Jimmy McGill, um advogado procurando definir o seu futuro.",
                 "reviews": "1",
-                "image": "bcs.jpg"
+                "image": "bcs.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
             {
                 "title": "Under the Dome",
                 "rating": "3.5",
+                "id": "8",
                 "year": "2013",
                 "duration": "42 min",
                 "channel": "CBS",
                 "status": "Em Continuidade",
                 "description": "Um campo de força invisível e misterioso desce sobre uma cidade fictícia nos Estados Unidos, prendendo os moradores e separando-os do resto da civilização.",
                 "reviews": "1",
-                "image": "utd.jpg"
+                "image": "utd.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             },
             
              {
                 "title": "The Black List",
                 "rating": "4.5",
+                "id": "9",
                 "year": "2013",
                 "duration": "45 min",
                 "channel": "Sony Pictures",
                 "status": "Em Continuidade",
                 "description": "Um dos fugitivos mais procurados do FBI se rende e diz que tem o mesmo interesse do que o FBI, acabar com criminosos e terroristas.",
                 "reviews": "1",
-                "image": "tbl.jpg"
+                "image": "tbl.jpg",
+                "images": "0",
+                "comments": [
+                    ]
             }
             
             

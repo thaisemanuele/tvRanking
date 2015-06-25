@@ -23,7 +23,7 @@
                         "comment": "Nao assisti..."
                     }
                 ]
-        },
+            },
 
             {
                 "title": "Arrow",
@@ -36,7 +36,7 @@
                 "description": "Oliver Queen sobrevive durante cinco anos em uma ilha e volta determinado a trazer justiça para a sua cidade.",
                 "reviews": "1",
                 "image": "arr.jpg",
-                "images": "2",
+                "images": "3",
                 "comments": [
                     ]
         },

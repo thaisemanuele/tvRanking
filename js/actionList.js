@@ -6,25 +6,26 @@ $(document).ready(function () {
         pageLoader();
     });
 
-
-
     function pageLoader() {
         $(".main-holder").html("");
-        $.ajaxSetup({ mimeType: "text/plain" });
-        $.getJSON("js/json/acao.json", function (data) {
-            sortData(data);
-            for (var i = 0; i < data[0].acao.length; i++) {
-                var rating = countStars(data[0].acao[i].rating);
-                $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + data[0].acao[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ data[0].acao[i].id +'">' +
-                    data[0].acao[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + data[0].acao[i].status + '</li></ul><div class="description"><p>' + data[0].acao[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
-            } /*End For*/
-            for(var i = 0; i < data[0].acao.length; i++) /*Deixa clicar em quaquer dos titulos*/
-                document.getElementById(i).addEventListener("click", function(event){
-                    localStorage.setItem("id", event.target.id);
-                    window.open("serie.html");
-                });
-
-        });
+        if(localStorage.getItem('ActionDataBase') == null){
+            $.ajaxSetup({ mimeType: "text/plain" });
+            $.getJSON("js/json/acao.json", function (data) {
+                localStorage.setItem('ActionDataBase',JSON.stringify(data[0]));
+            });
+        }
+        var dados = JSON.parse(localStorage.getItem('ActionDataBase'));
+        sortData(dados);
+        for (var i = 0; i < dados.acao.length; i++) {
+            var rating = countStars(dados.acao[i].rating);
+            $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + dados.acao[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ dados.acao[i].id +'">' +
+                dados.acao[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[i].status + '</li></ul><div class="description"><p>' + dados.acao[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
+        } /*End For*/
+        for(var i = 0; i < dados.acao.length; i++) /*Deixa clicar em quaquer dos titulos*/
+            document.getElementById(i).addEventListener("click", function(event){
+                localStorage.setItem("id", event.target.id);
+                window.open("serie_acao.html");
+            });
     }
 
 
@@ -45,17 +46,17 @@ $(document).ready(function () {
     function sortData(data) {
 
         if ($("#sortSelection").val() === "alfa") {
-            data[0].acao.sort(SortByName);
+            data.acao.sort(SortByName);
         } else if ($("#sortSelection").val() === "year") {
-            data[0].acao.sort(SortByYear);
+            data.acao.sort(SortByYear);
         } else if ($("#sortSelection").val() === "rating") {
-            data[0].acao.sort(SortByRating);
+            data.acao.sort(SortByRating);
         } else if ($("#sortSelection").val() === "duration") {
-            data[0].acao.sort(SortByDuration);
+            data.acao.sort(SortByDuration);
         } else if ($("#sortSelection").val() === "returning") {
-            data[0].acao.sort(SortByReturning);
+            data.acao.sort(SortByReturning);
         } else if ($("#sortSelection").val() === "ended") {
-            data[0].acao.sort(SortByEnded);
+            data.acao.sort(SortByEnded);
         }
         return data;
     }

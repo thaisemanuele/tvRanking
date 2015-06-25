@@ -4,7 +4,7 @@
             {
                 "title": "Game of Thrones",
                 "rating": "4.5",
-                "id":"3000",
+                "id": "0",
                 "year": "2011",
                 "duration": "60 min",
                 "channel": "HBO",
@@ -20,7 +20,7 @@
             {
                 "title": "Breaking Bad",
                 "rating": "4.5",
-                "id":"3001",
+                "id": "1",
                 "year": "2008",
                 "duration": "45 min",
                 "channel": "AMC",
@@ -36,7 +36,7 @@
             {
                 "title": "The Walking Dead",
                 "rating": "4.5",
-                "id":"3002",
+                "id": "2",
                 "year": "2010",
                 "duration": "42 min",
                 "channel": "AMC",
@@ -52,7 +52,7 @@
            {
                 "title": "House",
                 "rating": "4.5",
-                "id":"3003",
+                "id": "3",
                 "year": "2004",
                 "duration": "42 min",
                 "channel": "Fox",
@@ -68,7 +68,7 @@
             {
                 "title": "Suits",
                 "rating": "4.5",
-                "id":"3004",
+                "id": "4",
                 "year": "2011",
                 "duration": "42 min",
                 "channel": "Universal Cable",
@@ -84,7 +84,7 @@
             {
                 "title": "The Mentalist",
                 "rating": "4.5",
-                "id":"3005",
+                "id": "5",
                 "year": "2008",
                 "duration": "43 min",
                 "channel": "CBS",
@@ -100,7 +100,7 @@
              {
                 "title": "Revenge",
                 "rating": "3.5",
-                "id":"3006",
+                "id": "6",
                 "year": "2011",
                 "duration": "43 min",
                 "channel": "ABC",
@@ -116,7 +116,7 @@
             {
                 "title": "Lost",
                 "rating": "4.5",
-                "id":"3007",
+                "id": "7",
                 "year": "2005",
                 "duration": "42 min",
                 "channel": "ABC",
@@ -132,7 +132,7 @@
              {
                 "title": "The White Queen",
                 "rating": "3.5",
-                "id":"3008",
+                "id": "8",
                 "year": "2013",
                 "duration": "60 min",
                 "channel": "BBC",
@@ -148,7 +148,7 @@
             {
                 "title": "Fringe",
                 "rating": "4.5",
-                "id":"3009",
+                "id": "9",
                 "year": "2008",
                 "duration": "43 min",
                 "channel": "Fox",
