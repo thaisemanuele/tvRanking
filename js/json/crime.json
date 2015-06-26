@@ -11,8 +11,10 @@
                 "status": "Em Continuidade",
                 "description": "Annalise Keating é uma brilhante e carismática professora de direito, que se vê tendo que colocar em prática os ensinamentos das suas aulas",
                 "reviews": "1",
-                "image": "htgawm.jpg",
-                "images": "0",
+                "image": "img/posters/htgawm.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     {
                         "author": "Fulano",
@@ -35,7 +37,7 @@
                 "status": "Finalizada",
                 "description": "Michael Scofield é propositalmente encarcerado em uma penitenciária estatal para libertar seu irmão, condenado por um crime que não cometeu.",
                 "reviews": "1",
-                "image": "pbrk.jpg",
+                "image": "img/posters/pbrk.jpg",
                 "images": "2",
                 "comments": [
                     ]
@@ -51,8 +53,10 @@
                 "status": "Em Continuidade",
                 "description": "A série segue o detetive James Gordon, enquanto ele luta contra vilões e corrupção na Gotham pré-Batman.",
                 "reviews": "1",
-                "image": "gotham.jpg",
-                "images": "0",
+                "image": "img/posters/gotham.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -67,8 +71,10 @@
                 "status": "Em Continuidade",
                 "description": "Agentes especiais de um time do FBI especialistas em analisar mentes criminosas, enfrentando os criminosos mais perigosos do mundo",
                 "reviews": "1",
-                "image": "cminds.jpg",
-                "images": "0",
+                "image": "img/posters/cminds.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -83,8 +89,10 @@
                 "status": "Finalizada",
                 "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
                 "reviews": "1",
-                "image": "tmtlst.jpg",
-                "images": "0",
+                "image": "img/posters/tmtlst.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -99,7 +107,7 @@
                 "status": "Em continuidade",
                 "description": "Matt Murdock, que ficou cego na sua juventude, luta contra a injustiça durante o dia como advogado e durante a noite como super-herói.",
                 "reviews": "1",
-                "image": "msdd.jpg",
+                "image": "img/posters/msdd.jpg",
                 "images": "0",
                 "comments": [
                     ]
@@ -115,8 +123,10 @@
                 "status": "Finalizada",
                 "description": "A história de um serial killer que trabalha como especialista forense. Ele passa o dia solucionando crimes e a noite cometendo-os",
                 "reviews": "1",
-                "image": "dex.jpg",
-                "images": "0",
+                "image": "img/posters/dex.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -131,8 +141,10 @@
                 "status": "Em Continuidade",
                 "description": "A história de quando o Saul Goodman é conhecido como Jimmy McGill, um advogado procurando definir o seu futuro.",
                 "reviews": "1",
-                "image": "bcs.jpg",
-                "images": "0",
+                "image": "img/posters/bcs.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -147,8 +159,10 @@
                 "status": "Em Continuidade",
                 "description": "Um campo de força invisível e misterioso desce sobre uma cidade fictícia nos Estados Unidos, prendendo os moradores e separando-os do resto da civilização.",
                 "reviews": "1",
-                "image": "utd.jpg",
-                "images": "0",
+                "image": "img/posters/utd.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -163,8 +177,10 @@
                 "status": "Em Continuidade",
                 "description": "Um dos fugitivos mais procurados do FBI se rende e diz que tem o mesmo interesse do que o FBI, acabar com criminosos e terroristas.",
                 "reviews": "1",
-                "image": "tbl.jpg",
-                "images": "0",
+                "image": "img/posters/tbl.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             }

@@ -11,8 +11,10 @@
                 "status": "Em Continuidade",
                 "description": "Sete famílias nobres lutam para obter o controle do continente fictício de Westeros e as brigas transformam-se em uma verdadeira guerra.",
                 "reviews": "1",
-                "image": "got.jpg",
-                "images": "0",
+                "image": "img/posters/got.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -27,8 +29,10 @@
                 "status": "Finalizada",
                 "description": "Walter White é um professor de química diagnosticado com câncer de pulmão. Ele começa a vender drogas para assegurar o futuro de sua família antes de morrer.",
                 "reviews": "1",
-                "image": "brkb.jpg",
-                "images": "0",
+                "image": "img/posters/brkb.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -43,8 +47,10 @@
                 "status": "Em Continuidade",
                 "description": "Uma epidemia de proporções apocalípticas varre a Terra, fazendo com que os mortos se levantem e se alimentem dos vivos.",
                 "reviews": "1",
-                "image": "twd.jpg",
-                "images": "0",
+                "image": "img/posters/twd.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -59,8 +65,10 @@
                 "status": "Finalizada",
                 "description": "O brilhante e sarcástico Dr. House, no desafio de resolver casos médicos que outros médicos desistem.",
                 "reviews": "1",
-                "image": "house.jpg",
-                "images": "0",
+                "image": "img/posters/house.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -75,8 +83,10 @@
                 "status": "Em Continuidade",
                 "description": "Suits segue a história de Mike Ross, que desistiu da universidade e consegue acidentalmete um emprego em uma das melhores empresas de direito de Nova Iorque.",
                 "reviews": "1",
-                "image": "suits.jpg",
-                "images": "0",
+                "image": "img/posters/suits.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -91,8 +101,10 @@
                 "status": "Finalizada",
                 "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
                 "reviews": "1",
-                "image": "tmtlst.jpg",
-                "images": "0",
+                "image": "img/posters/tmtlst.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -107,8 +119,10 @@
                 "status": "Finalizada",
                 "description": "Amanda Clarke se transforma em Emily Thorne e volta aos Hamptons para vingar a morte de seu pai, que foi acusado por um crime que não cometeu.",
                 "reviews": "1",
-                "image": "revg.jpg",
-                "images": "0",
+                "image": "img/posters/revg.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -123,8 +137,10 @@
                 "status": "Finalizada",
                 "description": "Um acidente com o vôo 815 leva os sobreviventes para uma ilha, onde logo eles percebem que não estão sozinhos.",
                 "reviews": "1",
-                "image": "lost.jpg",
-                "images": "0",
+                "image": "img/posters/lost.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -139,8 +155,10 @@
                 "status": "Finalizada",
                 "description": "Um conto de amor e perdas, sedução e enganação, traição e assassinato. A luta de três mulheres manipuladoras para chegar ao poder.",
                 "reviews": "1",
-                "image": "twq.jpg",
-                "images": "0",
+                "image": "img/posters/twq.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -155,8 +173,10 @@
                 "status": "Finalizada",
                 "description": "Uma divisão do FBI que investiga casos misteriosos e inexplicáveis, alguns deles relacionados a um universo paralelo.",
                 "reviews": "1",
-                "image": "frg.jpg",
-                "images": "0",
+                "image": "img/posters/frg.jpg",
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             }

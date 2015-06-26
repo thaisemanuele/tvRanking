@@ -10,17 +10,11 @@ $(document).ready(function () {
 
     function pageLoader() {
         $(".main-holder").html("");
-        if(localStorage.getItem('DramaDataBase') == null){
-            $.ajaxSetup({ mimeType: "text/plain" });
-            $.getJSON("js/json/drama.json", function (data) {
-                localStorage.setItem('DramaDataBase',JSON.stringify(data[0]));
-            });
-        }
         var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
         sortData(dados);
         for (var i = 0; i < dados.drama.length; i++) {
             var rating = countStars(dados.drama[i].rating);
-            $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="img/posters/' + dados.drama[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ dados.drama[i].id +'">' +
+            $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="' + dados.drama[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ dados.drama[i].id +'">' +
                 dados.drama[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[i].status + '</li></ul><div class="description"><p>' + dados.drama[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
         } /*End For*/
         for(var i = 0; i < dados.drama.length; i++) /*Deixa clicar em quaquer dos titulos*/

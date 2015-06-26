@@ -11,8 +11,11 @@
                 "status": "Em Continuidade",
                 "description": "Ex-agente da CIA dado como morto é contratado por um bilionário misterioso para evitar crimes violentos antes que eles ocorram.",
                 "reviews": "1",
-                "image": "poi.jpg",
-                "images": "2",
+                "image": "img/posters/poi.jpg",
+                "gallery": [
+                        "img/gallery/acao/0_0.jpg",
+                        "img/gallery/acao/0_1.jpg"
+                    ],
                 "comments": [
                     {
                         "author": "Fulano",
@@ -35,8 +38,12 @@
                 "status": "Em Continuidade",
                 "description": "Oliver Queen sobrevive durante cinco anos em uma ilha e volta determinado a trazer justiça para a sua cidade.",
                 "reviews": "1",
-                "image": "arr.jpg",
-                "images": "3",
+                "image": "img/posters/arr.jpg",
+                "gallery": [
+                        "img/gallery/acao/1_0.jpg",
+                        "img/gallery/acao/1_1.jpg",
+                        "img/gallery/acao/1_2.jpg"
+                    ],
                 "comments": [
                     ]
         },
@@ -51,8 +58,11 @@
                 "status": "Em Continuidade",
                 "description": "Vikings acompanha a história de Ragnar Lothbrok, que se levanta para tornar-se rei das tribos vikings.",
                 "reviews": "1",
-                "image": "vik.jpg",
-                "images": "2",
+                "image": "img/posters/vik.jpg",
+                "gallery": [
+                        "img/gallery/acao/2_0.jpg",
+                        "img/gallery/acao/2_1.jpg"
+                    ],
                 "comments": [
                     ]
         },
@@ -67,8 +77,13 @@
                 "status": "Em Continuidade",
                 "description": "Um doutor alienígena que viaja pelo espaço-tempo, Em vez de morrer, ele é capaz de regenerar-se em um novo corpo.",
                 "reviews": "0",
-                "image": "dw.jpg",
-                "images": "0",
+                "image": "img/posters/dw.jpg",
+                "gallery": [
+                        "img/gallery/acao/3_0.jpg",
+                        "img/gallery/acao/3_1.jpg",
+                        "img/gallery/acao/3_2.jpg"
+
+                    ],
                 "comments": [
                     ]
         },
@@ -83,8 +98,10 @@
                 "status": "Em Continuidade",
                 "description": "Um time de Agentes da S.H.I.E.L.D. investigando o novo, o estranho e o desconhecido ao redor do mundo.",
                 "reviews": "1",
-                "image": "maos.jpg",
-                "images": "1",
+                "image": "img/posters/maos.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                     ]
         },
@@ -99,8 +116,10 @@
                 "status": "Em Continuidade",
                 "description": "Uma oficial do serviço de proteção de Vancouver é transportada de 2077 para 2012 com a intenção de mudar o futuro",
                 "reviews": "1",
-                "image": "cnuum.jpg",
-                "images": "0",
+                "image": "img/posters/cnuum.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                     ]
         },
@@ -115,8 +134,10 @@
                 "status": "Em Continuidade",
                 "description": "Dos mesmos criadores de Chicago Fire, Chicago P.D. é um drama policial sobre um homem e uma mulher que fazem de tudo para proteger sua comunidade",
                 "reviews": "1",
-                "image": "cpd.jpg",
-                "images": "0",
+                "image": "img/posters/cpd.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                     ]
         },
@@ -131,8 +152,10 @@
                 "status": "Em Continuidade",
                 "description": "Depois de uma tempestade com um acelerador de partículas, o investigador Barry Allen é atingido por um raio e entra em coma, para acordar com super-poderes.",
                 "reviews": "1",
-                "image": "tflsh.jpg",
-                "images": "1",
+                "image": "img/posters/tflsh.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                     ]
         },
@@ -147,8 +170,10 @@
                 "status": "Finalizada",
                 "description": "Um agente do FBI começa uma investigação em Jerusalém e descobre algo que pode mudar o rumo da história da humanidade",
                 "reviews": "1",
-                "image": "dig.jpg",
-                "images": "1",
+                "image": "img/posters/dig.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                     ]
         },
@@ -163,8 +188,10 @@
                 "status": "Em Continuidade",
                 "description": "A história de Grace, uma detetive disfarçada que é atormentada pela possibilidade que suas próprias ações tenham matado seu filho.",
                 "reviews": "1",
-                "image": "rog.jpg",
-                "images": "1",
+                "image": "img/posters/rog.jpg",
+                "gallery": [
+                    
+                    ],
                 "comments": [
                 ]
         }

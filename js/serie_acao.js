@@ -5,16 +5,10 @@ $(document).ready(function(){
         function pageLoader() {
             var id = localStorage.getItem("id"); 
             $(".main-holder").html("");
-            if(localStorage.getItem('ActionDataBase') == null){
-                $.ajaxSetup({ mimeType: "text/plain" });
-                $.getJSON("js/json/acao.json", function (data) {
-                    localStorage.setItem('ActionDataBase',JSON.stringify(data[0]));
-                });
-            }
             var dados = JSON.parse(localStorage.getItem('ActionDataBase'));
             var rating = countStars(dados.acao[id].rating);
             $("title").append(dados.acao[id].title);
-            $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="img/posters/' + dados.acao[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
+            $(".main-holder").append('<article class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.acao[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title">' +
                 dados.acao[id].title + '</h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].status + '</li></ul><div class="description"><p>' + dados.acao[id].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
             for(var i=0;i<dados.acao[id].comments.length;i++)
                 $(".comments").append('<div class="comment"><p>Autor: '+ dados.acao[id].comments[i].author +'</p><p>'+dados.acao[id].comments[i].comment+'</p></div>');
@@ -41,15 +35,14 @@ $(function () {
     var linksContainer = $('#links');
     var id = localStorage.getItem("id"); 
     var dados = JSON.parse(localStorage.getItem('ActionDataBase'));
-    var number_images = dados.acao[id].images;
-    for(var i=0;i<number_images;i++){
+    for(var i=0;i<dados.acao[id].gallery.length;i++){
         $('<a/>')
-            .append($('<img class="small_image">').prop('src','img/gallery/acao/'+id+'_'+i+'.jpg'))
-            .prop('href', 'img/gallery/acao/'+id+'_'+i+'.jpg')
+            .append($('<img class="small_image">').prop('src',dados.acao[id].gallery[i]))
+            .prop('href', dados.acao[id].gallery[i])
             .prop('title', dados.acao[id].title)
             .attr('data-gallery', '')
             .appendTo(linksContainer);
-    }
+    }   
     $('#borderless-checkbox').on('change', function () {
         var borderless = $(this).is(':checked');
         $('#blueimp-gallery').data('useBootstrapModal', !borderless);

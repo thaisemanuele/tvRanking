@@ -344,8 +344,7 @@
             progress: tProgress,
             footer: tFooter,
             actions: tActions,
-            actionDelete: tActionDelete,
-            actionUpload: tActionUpload
+            actionDelete: tActionDelete
         },
         defaultPreviewTemplates = {
             generic: tGeneric,
