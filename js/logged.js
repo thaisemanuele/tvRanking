@@ -5,7 +5,6 @@ $(document).ready(function () {
 		isLogged = 0;
 	else
 		isLogged = localStorage.getItem("logged");
-	console.log(isLogged);
 	if(isLogged){
 		$("#loginRegister").append('<button type="button" class="btn btn-primary" id="registerSerie">Cadastrar Série</button>')
 	}

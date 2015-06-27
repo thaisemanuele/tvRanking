@@ -10,13 +10,13 @@ $(document).ready(function () {
     var serie1Name =[];
     var serie2Name =[];
 
-    $.getJSON("js/json/drama.json", function (dat) {
-        dat[0].drama.sort(SortByName);
-        for (var i = 0; i < dat[0].drama.length; i++) {
-            labelArray.push(dat[0].drama[i].title);
-            ratingArray.push(dat[0].drama[i].rating);
-            $("#serie1").append("<option value='" + dat[0].drama[i].id + "'>" + dat[0].drama[i].title + "</option>");
-            $("#serie2").append("<option value='" + dat[0].drama[i].id + "'>" + dat[0].drama[i].title + "</option>");
+        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+        dados.drama.sort(SortByName);
+        for (var i = 0; i < dados.drama.length; i++) {
+            labelArray.push(dados.drama[i].title);
+            ratingArray.push(dados.drama[i].rating);
+            $("#serie1").append("<option value='" + dados.drama[i].id + "'>" + dados.drama[i].title + "</option>");
+            $("#serie2").append("<option value='" + dados.drama[i].id + "'>" + dados.drama[i].title + "</option>");
 
         }
 
@@ -84,55 +84,63 @@ $(document).ready(function () {
         var myCompChart2 = new Chart(cmp2).Bar(data2, {
             scaleGridLineColor: "rgba(0,0,0,.05)"
         });
-        
-        $("#serie1").on("change", function () {
-            var id = $("#serie1").val();
-            var img;
-            var path = "img/posters/";
-            $.getJSON("js/json/drama.json", function (dat) {
-                for (var i = 0; i < dat[0].drama.length; i++) {
-                    if (dat[0].drama[i].id == id) {
-                        console.log(dat[0].drama[i].image);
-                        img = dat[0].drama[i].image;
-                        path = path.concat(img);
+        var id = localStorage.getItem("compare");
+        console.log("ID = "+id);
+        if( id != null){
+            localStorage.setItem("compare",null);
+             for (var i = 0; i < dados.drama.length; i++) {
+                    if (dados.drama[i].id == id) {
+                        console.log(dados.drama[i].image);
+                        img = dados.drama[i].image;
                         break;
                     }
                 }
-               $("#poster1").attr("src", path);
-                serie1Name[0] = dat[0].drama[i].title;
-                rating1[0] = dat[0].drama[i].rating;
+               $("#poster1").attr("src", img);
+                serie1Name[0] = dados.drama[i].title;
+                rating1[0] = dados.drama[i].rating;
+                myCompChart1.removeData();
+                myCompChart1.addData(rating1,serie1Name);
+                myCompChart1.update();
+            }
+            $("#serie1").on("change", function () {
+                var id = $("#serie1").val();
+                var img;
+                for (var i = 0; i < dados.drama.length; i++) {
+                    if (dados.drama[i].id == id) {
+                        console.log(dados.drama[i].image);
+                        img = dados.drama[i].image;
+                        break;
+                    }
+                }
+               $("#poster1").attr("src", img);
+                serie1Name[0] = dados.drama[i].title;
+                rating1[0] = dados.drama[i].rating;
                 myCompChart1.removeData();
                 myCompChart1.addData(rating1,serie1Name);
                 myCompChart1.update();
             });
-
-        });
         
         $("#serie2").on("change", function () {
             var id = $("#serie2").val();
             var img;
-            var path = "img/posters/";
-            $.getJSON("js/json/drama.json", function (dat) {
-                for (var i = 0; i < dat[0].drama.length; i++) {
-                    if (dat[0].drama[i].id == id) {
-                        console.log(dat[0].drama[i].image);
-                        img = dat[0].drama[i].image;
-                        path = path.concat(img);
+                for (var i = 0; i < dados.drama.length; i++) {
+                    if (dados.drama[i].id == id) {
+                        console.log(dados.drama[i].image);
+                        img = dados.drama[i].image;
                         break;
                     }
                 }
-               $("#poster2").attr("src", path);
-                serie2Name[0] = dat[0].drama[i].title;
-                rating2[0] = dat[0].drama[i].rating;
+               $("#poster2").attr("src", img);
+                serie2Name[0] = dados.drama[i].title;
+                rating2[0] = dados.drama[i].rating;
                 myCompChart2.removeData();
                 myCompChart2.addData(rating2,serie2Name);
                 myCompChart2.update();
-            });
 
         });
         
 
-    });
+    
 
     function SortByName(a, b) {
         var aTitle = a.title.toLowerCase();
@@ -141,38 +149,35 @@ $(document).ready(function () {
     }
 
     function getTitle(id) {
-        $.getJSON("js/json/drama.json", function (dat) {
-            for (var i = 0; i < dat[0].drama.length; i++) {
-                if (dat[0].drama[i].id == id)
-                    return dat[0].drama[i].title;
+        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+            for (var i = 0; i < dados.drama.length; i++) {
+                if (dados.drama[i].id == id)
+                    return dados.drama[i].title;
             }
-        });
     }
 
     function getImage(id) {
-        $.getJSON("js/json/drama.json", function (dat) {
-            for (var i = 0; i < dat[0].drama.length; i++) {
-                if (dat[0].drama[i].id == id) {
-                    console.log(dat[0].drama[i].image);
-                    return (dat[0].drama[i].image);
+        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+            for (var i = 0; i < dados.drama.length; i++) {
+                if (dados.drama[i].id == id) {
+                    console.log(dados.drama[i].image);
+                    return (dados.drama[i].image);
                     break;
                 }
 
 
             }
-        });
     }
 
     function getRating(id) {
-        $.getJSON("js/json/drama.json", function (dat) {
-            for (var i = 0; i < dat[0].drama.length; i++) {
-                if (dat[0].drama[i].id == id) {
-                    return dat[0].drama[i].rating;
+        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
+            for (var i = 0; i < dados.drama.length; i++) {
+                if (dados.drama[i].id == id) {
+                    return dados.drama[i].rating;
                     break;
                 }
 
             }
-        });
     }
 
 
