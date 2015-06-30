@@ -54,16 +54,11 @@
 }
 
 .navbar-inverse {
-    /*background-color: #222;*/
-    
     background-color: #4D6676;
     border-color: #6EBCD2;
-    /*border-color: #080808;*/
 }
 
-.navbar-inverse .navbar-brand {
-    /*color: #9d9d9d;*/
-    
+.navbar-inverse .navbar-brand {    
     background-color: #31859D;
     color: #D8CA24;
 }
@@ -84,8 +79,6 @@ li.active,
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    /* color: #9d9d9d; */
-    
     color: #E1F2CE;
 }
 
@@ -94,16 +87,7 @@ li.active,
     color: #D8CA24;
     background-color: #363F4C;
     font-weight: bold;
-    /*color: #fff;
-  background-color: transparent;*/
 }
-/*
-.navbar-inverse .navbar-nav > .active > a,
-.navbar-inverse .navbar-nav > .active > a:hover,
-.navbar-inverse .navbar-nav > .active > a:focus {
-  color: #fff;
-  background-color: #080808;
-*/
 
 header {
     background-color: rgba(95, 158, 160, 0.1);

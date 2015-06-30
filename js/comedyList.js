@@ -14,13 +14,22 @@ $(document).ready(function () {
                 sortData(dados);
                 var rating = countStars(dados.comedia[i].rating);
                 $(".main-holder").append('<article class="col-md-10 col-md-offset-1"><img class="show-img col-sm-5 img-responsive" src="' + dados.comedia[i].image + '" alt=""><div class="show-info col-sm-8  centralize"><h1 class="show-title"> <a href="" id="'+ dados.comedia[i].id +'">' +
-                    dados.comedia[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].status + '</li></ul><div class="description"><p>' + dados.comedia[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
+                    dados.comedia[i].title + '</a></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].year + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].channel + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[i].status + '</li></ul><div class="description"><p>' + dados.comedia[i].description + '</p><p>Avaliado por <span class="users_number">X </span>usuários</p></div><a href="#" id="compare'+i+'" class="compare col-sm-10 col-sm-offset-1">Compare</a></div>         </article>');
             } /*End For*/
         for(var i = 0; i < dados.comedia.length; i++) /*Deixa clicar em quaquer dos titulos*/
             document.getElementById(i).addEventListener("click", function(event){
                 localStorage.setItem("id", event.target.id);
                 window.open("serie_comedia.html");
             });
+        for (var i = 0; i < dados.comedia.length; i++)
+            compareListener(i);
+    }
+
+    function compareListener(i) {
+        document.getElementById("compare"+i).addEventListener("click", function(event){
+            localStorage.setItem("compare", i);
+            window.open("comediaCompare.html");
+        });
     }
 
     function countStars(rating) {

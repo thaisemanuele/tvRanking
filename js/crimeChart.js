@@ -10,13 +10,13 @@ $(document).ready(function () {
     var serie1Name =[];
     var serie2Name =[];
 
-        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
-        dados.drama.sort(SortByName);
-        for (var i = 0; i < dados.drama.length; i++) {
-            labelArray.push(dados.drama[i].title);
-            ratingArray.push(dados.drama[i].rating);
-            $("#serie1").append("<option value='" + dados.drama[i].id + "'>" + dados.drama[i].title + "</option>");
-            $("#serie2").append("<option value='" + dados.drama[i].id + "'>" + dados.drama[i].title + "</option>");
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+        dados.crime.sort(SortByName);
+        for (var i = 0; i < dados.crime.length; i++) {
+            labelArray.push(dados.crime[i].title);
+            ratingArray.push(dados.crime[i].rating);
+            $("#serie1").append("<option value='" + dados.crime[i].id + "'>" + dados.crime[i].title + "</option>");
+            $("#serie2").append("<option value='" + dados.crime[i].id + "'>" + dados.crime[i].title + "</option>");
 
         }
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
             labels: labelArray,
             datasets: [
                 {
-                    label: "Séries de Drama",
+                    label: "Séries de Crime",
                     fillColor: "rgba(190,61,66,0.7)",
                     strokeColor: "rgba(220,220,220,0.8)",
                     highlightFill: "rgba(220,220,220,0.75)",
@@ -48,7 +48,7 @@ $(document).ready(function () {
             labels: serie1Name,
             datasets: [
                 {
-                    label: "Séries de Drama",
+                    label: "Séries de Crime",
                     fillColor: "rgba(233,194,26,0.8)",
                     strokeColor: "rgba(220,220,220,0.8)",
                     highlightFill: "rgba(220,220,220,0.75)",
@@ -63,7 +63,7 @@ $(document).ready(function () {
             labels: serie2Name,
             datasets: [
                 {
-                    label: "Séries de Drama",
+                    label: "Séries de Crime",
                     fillColor: "rgba(120,125,255,0.8)",
                     strokeColor: "rgba(220,220,220,0.8)",
                     highlightFill: "rgba(220,220,220,0.75)",
@@ -85,17 +85,19 @@ $(document).ready(function () {
             scaleGridLineColor: "rgba(0,0,0,.05)"
         });
         var id = localStorage.getItem("compare");
+        console.log("ID = "+id);
         if( id != null){
             localStorage.setItem("compare",null);
-             for (var i = 0; i < dados.drama.length; i++) {
-                    if (dados.drama[i].id == id) {
-                        img = dados.drama[i].image;
+             for (var i = 0; i < dados.crime.length; i++) {
+                    if (dados.crime[i].id == id) {
+                        console.log(dados.crime[i].image);
+                        img = dados.crime[i].image;
                         break;
                     }
                 }
                $("#poster1").attr("src", img);
-                serie1Name[0] = dados.drama[i].title;
-                rating1[0] = dados.drama[i].rating;
+                serie1Name[0] = dados.crime[i].title;
+                rating1[0] = dados.crime[i].rating;
                 myCompChart1.removeData();
                 myCompChart1.addData(rating1,serie1Name);
                 myCompChart1.update();
@@ -103,16 +105,16 @@ $(document).ready(function () {
             $("#serie1").on("change", function () {
                 var id = $("#serie1").val();
                 var img;
-                for (var i = 0; i < dados.drama.length; i++) {
-                    if (dados.drama[i].id == id) {
-                        console.log(dados.drama[i].image);
-                        img = dados.drama[i].image;
+                for (var i = 0; i < dados.crime.length; i++) {
+                    if (dados.crime[i].id == id) {
+                        console.log(dados.crime[i].image);
+                        img = dados.crime[i].image;
                         break;
                     }
                 }
                $("#poster1").attr("src", img);
-                serie1Name[0] = dados.drama[i].title;
-                rating1[0] = dados.drama[i].rating;
+                serie1Name[0] = dados.crime[i].title;
+                rating1[0] = dados.crime[i].rating;
                 myCompChart1.removeData();
                 myCompChart1.addData(rating1,serie1Name);
                 myCompChart1.update();
@@ -121,16 +123,16 @@ $(document).ready(function () {
         $("#serie2").on("change", function () {
             var id = $("#serie2").val();
             var img;
-                for (var i = 0; i < dados.drama.length; i++) {
-                    if (dados.drama[i].id == id) {
-                        console.log(dados.drama[i].image);
-                        img = dados.drama[i].image;
+                for (var i = 0; i < dados.crime.length; i++) {
+                    if (dados.crime[i].id == id) {
+                        console.log(dados.crime[i].image);
+                        img = dados.crime[i].image;
                         break;
                     }
                 }
                $("#poster2").attr("src", img);
-                serie2Name[0] = dados.drama[i].title;
-                rating2[0] = dados.drama[i].rating;
+                serie2Name[0] = dados.crime[i].title;
+                rating2[0] = dados.crime[i].rating;
                 myCompChart2.removeData();
                 myCompChart2.addData(rating2,serie2Name);
                 myCompChart2.update();
@@ -147,19 +149,19 @@ $(document).ready(function () {
     }
 
     function getTitle(id) {
-        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
-            for (var i = 0; i < dados.drama.length; i++) {
-                if (dados.drama[i].id == id)
-                    return dados.drama[i].title;
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+            for (var i = 0; i < dados.crime.length; i++) {
+                if (dados.crime[i].id == id)
+                    return dados.crime[i].title;
             }
     }
 
     function getImage(id) {
-        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
-            for (var i = 0; i < dados.drama.length; i++) {
-                if (dados.drama[i].id == id) {
-                    console.log(dados.drama[i].image);
-                    return (dados.drama[i].image);
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+            for (var i = 0; i < dados.crime.length; i++) {
+                if (dados.crime[i].id == id) {
+                    console.log(dados.crime[i].image);
+                    return (dados.crime[i].image);
                     break;
                 }
 
@@ -168,10 +170,10 @@ $(document).ready(function () {
     }
 
     function getRating(id) {
-        var dados = JSON.parse(localStorage.getItem('DramaDataBase'));
-            for (var i = 0; i < dados.drama.length; i++) {
-                if (dados.drama[i].id == id) {
-                    return dados.drama[i].rating;
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+            for (var i = 0; i < dados.crime.length; i++) {
+                if (dados.crime[i].id == id) {
+                    return dados.crime[i].rating;
                     break;
                 }
 

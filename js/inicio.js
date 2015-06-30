@@ -47,7 +47,7 @@ $(document).ready(function(){
         });
         document.getElementById("compareComedy").addEventListener("click", function(event){
             localStorage.setItem("compare", last);
-            window.open("comedyCompare.html");
+            window.open("comediaCompare.html");
         });
 
         //ultima atualizacao em crime
