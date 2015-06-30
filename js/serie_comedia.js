@@ -1,15 +1,15 @@
 $(document).ready(function(){
         
+        var dados = JSON.parse(localStorage.getItem('ComedyDataBase'));
+        var id = localStorage.getItem("id");         
         pageLoader();
 
         function pageLoader() {
-            var id = localStorage.getItem("id"); 
             $(".main-holder").html("");
-            var dados = JSON.parse(localStorage.getItem('ComedyDataBase'));
                 var rating = countStars(dados.comedia[id].rating);
                 $("title").append(dados.comedia[id].title);
                 $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.comedia[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' +
-                    dados.comedia[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.comedia[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.comedia[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.comedia[id].description + '</span></p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
+                    dados.comedia[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.comedia[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.comedia[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.comedia[id].description + '</span></p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
                 for(var i=0;i<dados.comedia[id].comments.length;i++)
                    $(".comments").append('<div class="comment"><p>Autor: '+ dados.comedia[id].comments[i].author +'</p><p><span itemprop="comment">'+dados.comedia[id].comments[i].comment+'</span></p></div>');
         }
@@ -27,6 +27,18 @@ $(document).ready(function(){
         }
         return stars;
     }
+
+    $('#input-2c').on('rating.change', function(event, value, caption) {
+        if(localStorage.getItem("logged")==null){
+            alert("Você deve estar logado para avaliar uma série");
+            return;
+        }
+        dados.comedia[id].reviews++;
+        dados.comedia[id].rating = (parseFloat(dados.comedia[id].rating) + parseFloat(value)) / dados.comedia[id].reviews
+        console.log(dados.comedia[id].rating);
+        $('#input-2c').rating('destroy');
+        localStorage.setItem('ComedyDataBase',JSON.stringify(dados));
+    });
     
 });
 

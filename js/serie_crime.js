@@ -1,16 +1,16 @@
 $(document).ready(function(){
         
+        var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
+        var id = localStorage.getItem("id"); 
         pageLoader();
 
         function pageLoader() {
-            var id = localStorage.getItem("id"); 
             $(".main-holder").html("");
             $.ajaxSetup({ mimeType: "text/plain" });
-            var dados = JSON.parse(localStorage.getItem('CrimeDataBase'));
             var rating = countStars(dados.crime[id].rating);
             $("title").append(dados.crime[id].title);
             $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.crime[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' +
-                dados.crime[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.crime[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.crime[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.crime[id].description + '</span></p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div>         </article>');
+                dados.crime[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.crime[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.crime[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.crime[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.crime[id].description + '</span></p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
             for(var i=0;i<dados.crime[id].comments.length;i++)
                 $(".comments").append('<div class="comment"><p>Autor: '+ dados.crime[id].comments[i].author +'</p><p><span itemprop="comment">'+dados.crime[id].comments[i].comment+'</span></p></div>');
         }
@@ -28,6 +28,18 @@ $(document).ready(function(){
         }
         return stars;
     }
+
+    $('#input-2c').on('rating.change', function(event, value, caption) {
+        if(localStorage.getItem("logged")==null){
+            alert("Você deve estar logado para avaliar uma série");
+            return;
+        }
+        dados.crime[id].reviews++;
+        dados.crime[id].rating = (parseFloat(dados.crime[id].rating) + parseFloat(value)) / dados.crime[id].reviews
+        console.log(dados.crime[id].rating);
+        $('#input-2c').rating('destroy');
+        localStorage.setItem('CrimeDataBase',JSON.stringify(dados));
+    });
     
 });
 
