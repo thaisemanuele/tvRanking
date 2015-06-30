@@ -5,6 +5,53 @@
 	$("#author").append(localStorage.getItem("user"));
 });
 
+function validateForm() {
+    var name = document.forms["registerForm"]["name"].value;
+    var plot = document.forms["registerForm"]["plot"].value;
+    var img = document.forms["registerForm"]["img"].value;
+    var category = document.forms["registerForm"]["category"].value;
+    var producer = document.forms["registerForm"]["producer"].value;
+    var time = document.forms["registerForm"]["time"].value;
+    var end = document.forms["registerForm"]["end"].value;
+    var start = document.forms["registerForm"]["start"].value;
+
+    if (name == null || name == "") {
+        alert("Nome da série deve ser preenchido");
+        return false;
+    }
+    else if (plot == null || plot == "") {
+        alert("Descrição deve ser preenchida");
+        return false;
+    }
+    else if (img == null || img == "") {
+        alert("Pelo menos uma imagem deve ser submetida");
+        return false;
+    }
+    else if (category == null || category == "") {
+        alert("Escolha uma categoria");
+        return false;
+    }
+    else if (start == null || start == "") {
+        alert("Selecione um ano de inicio");
+        return false;
+    }
+    else if (end == null || end == "") {
+        alert("Selecione um ano de fim (ou em continuidade)");
+        return false;
+    }
+    else if (time == null || time == "") {
+        alert("Preencha o campo duração");
+        return false;
+    }
+    else if (producer == null || producer == "") {
+        alert("O campo produtora deve ser preenchido");
+        return false;
+    }
+    else{
+    	saveSerie();
+    	location.href = "index.html";
+    }
+}
 
 function saveSerie(){
 	var serieCategory = document.getElementById("category").value;
@@ -104,5 +151,4 @@ function saveSerie(){
 		category.drama.push(newSerie); //insere no json
 	}
     localStorage.setItem(dataBase,JSON.stringify(category)); //atualiza sessao com novo json
-    location.href = "index.html";
 }

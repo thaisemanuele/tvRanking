@@ -6,12 +6,17 @@ $(document).ready(function(){
 
         function pageLoader() {
             $(".main-holder").html("");
-                var rating = countStars(dados.comedia[id].rating);
-                $("title").append(dados.comedia[id].title);
-                $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.comedia[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' +
-                    dados.comedia[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.comedia[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.comedia[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.comedia[id].description + '</span></p><p>Avaliado por <span class="users_number">X </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
+            var rating = countStars(dados.comedia[id].rating);
+            $("title").append(dados.comedia[id].title);
+            $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.comedia[id].image + '" alt=""><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' +
+                    dados.comedia[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.comedia[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.comedia[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.comedia[id].description + '</span></p><p>Avaliado por <span class="users_number">'+dados.comedia[id].reviews+' </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
+            if(dados.comedia[id].comments.length == 0)
+                $(".comments").append('<p>Não há comentários para essa série ainda.</p>');
+            else
                 for(var i=0;i<dados.comedia[id].comments.length;i++)
-                   $(".comments").append('<div class="comment"><p>Autor: '+ dados.comedia[id].comments[i].author +'</p><p><span itemprop="comment">'+dados.comedia[id].comments[i].comment+'</span></p></div>');
+                $(".comments").append('<div class="comment"><p>Autor: '+ dados.comedia[id].comments[i].author +'</p><p><span itemprop="comment">'+dados.comedia[id].comments[i].comment+'</span></p></div>');
+            if(dados.comedia[id].gallery.length == 0)
+                $("#links").append('<p>Não há imagens cadastradas para essa série.</p>');
         }
 
     function countStars(rating) {
@@ -39,6 +44,19 @@ $(document).ready(function(){
         $('#input-2c').rating('destroy');
         localStorage.setItem('ComedyDataBase',JSON.stringify(dados));
     });
+
+
+    if(localStorage.getItem("logged")==1)
+        $(".commentBox").append('\
+                <h4>Deixe um comentário abaixo sobre essa série:</h4>\
+                <form class="form-horizontal">\
+                    <div class="form-group">\
+                        <label for="name" class="col-sm-2 control-label">Nome Completo</label>\
+                        <input id="name" type="text" class="col-sm-2 form-control"/>\
+                    </div>\
+                </form>\
+                <textarea id="comment"class= "form-horizontal col-sm-offset-2" rows="6" cols="60" required="required">Escreva seu comentário aqui.</textarea>\
+                <input class="btn btn-default col-sm-offset-4 col-sm-2 centralize" type="button" value="Enviar" onclick="writeComment()"/>');
     
 });
 

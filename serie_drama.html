@@ -83,19 +83,16 @@
             </div>
             <div class="container-fluid row">
                 <h2> Galeria de imagens</h2>
-                <div id="links"></div>
+                <div id="links">
+                    <!-- Mostra as imagens cadastradas para uma serie -->
+                </div>
                 <h2> Comentários</h2>
                 <div class="comments">
+                    <!-- Mostra os comentarios para uma serie -->
                 </div>
-                <h4>Deixe um comentário abaixo sobre essa série:</h4>
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Nome Completo</label>
-                        <input id="name" type="text" class="col-sm-2 form-control"/>
-                    </div>
-                </form>
-                <textarea id="comment" class= "form-horizontal col-sm-offset-2" rows="6" cols="60" required="required">Escreva seu comentário aqui.</textarea>
-                <input class="btn btn-default col-sm-offset-4 col-sm-2 centralize" type="button" value="Enviar" onclick="writeComment()"/>
+                <div class="commentBox">
+                    <!-- Se logado aqui irá mostrar caixa para escrever comentarios -->
+                </div>
             </div>
     </section>
     <aside class=" col-sm-3 sidebar">

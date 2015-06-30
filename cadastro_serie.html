@@ -84,17 +84,17 @@
                 </div>
                 <div class="row">
                     <p class="col-sm-offset-1"> <b>Autor: <b/><span id="author"></span></p>
-                    <form class=" form-horizontal">
+                    <form name="registerForm" onsubmit="return validateForm()" method="POST" class="form-horizontal">
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">Nome da Série</label>
-                            <input type="text" class="col-sm-3 form-control" id="name" maxlength="50">
+                            <input type="text" class="col-sm-3 form-control" id="name" name="name" maxlength="50">
                         </div> 
                         <div class="form-group">
                             <label for="plot" class="col-sm-2 control-label">Descrição</label>
-                            <textarea id="plot" class="col-sm-4 form-control" rows="8" cols="100" maxlength="300"></textarea>
+                            <textarea id="plot" class="col-sm-4 form-control" rows="8" cols="100" maxlength="300" name="plot"></textarea>
                         </div> 
                         <label for="image" class="col-sm-2 control-label">Upload uma imagem</label>
-                        <input id="image" type="file" class="col-sm-4 col-sm-offset-4 file" multiple="true" accept="image/*">
+                        <input id="image" type="file" name="img" class="col-sm-4 col-sm-offset-4 file" multiple="true" accept="image/*">
                         <script>
                         /* Inicializa plugin para upload de imagens com criterios selecionados */
                             $("#image").fileinput({
@@ -112,37 +112,37 @@
                             });
                         </script>
                         <div class="form-group next-upload">
-                            <label for="passw" class="col-sm-2 control-label">Categoria</label>
-                            <select id="category" class="selectpicker col-sm-3 form-control">
-                                <option>Ação</option>
-                                <option>Comédia</option>
-                                <option>Crime</option>
-                                <option>Drama</option>
+                            <label for="category" class="col-sm-2 control-label">Categoria</label>
+                            <select id="category" name="category" class="selectpicker col-sm-3 form-control">
+                                <option value="">Categoria</option>
+                                <option value="Ação">Ação</option>
+                                <option value="Comédia">Comédia</option>
+                                <option value="Crime">Crime</option>
+                                <option value="Drama">Drama</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="start" class="col-sm-2 control-label">Início</label>
-                            <select class="selectpicker col-sm-1 form-control years" id="start">
+                            <select class="selectpicker col-sm-1 form-control years" name="start" id="start">
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="end" class="col-sm-2 control-label">Fim</label>
-                            <select class="selectpicker col-sm-1 form-control years" id="end">
+                            <select class="selectpicker col-sm-1 form-control years" name="end" id="end">
                                 <option> Em continuidade </option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="time" class="col-sm-2 control-label">Duração (em minutos)</label>
-                            <input type="text" class="col-sm-3 form-control" id="time" maxlength="3">
+                            <input type="text" class="col-sm-3 form-control" id="time" name="time" maxlength="3">
                         </div>
                         <div class="form-group">
                             <label for="producer" class="col-sm-2 control-label">Produtora</label>
-                            <input type="text" class="col-sm-3 form-control" id="producer">
+                            <input type="text" class="col-sm-3 form-control" id="producer" name="producer">
                         </div> 
-
+                        <input type="submit" class="btn btn-default col-sm-offset-5 col-sm-2 centralize" value="Cadastrar">
                     </form>
                     
-                    <button type="submit" class="btn btn-default col-sm-offset-5 col-sm-2 centralize" onclick="saveSerie()">Cadastrar</button>                       
                 </br>
                 </div>    
             </div>
