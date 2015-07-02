@@ -16,6 +16,9 @@ $(document).ready(function () {
         } else
             $("#trailer").append('<iframe itemprop="trailer" width="420" height="315" src="' + dados.drama[id].trailer + '" frameborder="0" allowfullscreen"></iframe>');
 
+        if (dados.drama[id].description != null) {
+            $("head").append('<meta name="description" content="' + dados.drama[id].description + '">');
+        }
         if (dados.drama[id].comments.length == 0)
             $(".comments").append('<p>Não há comentários para essa série ainda.</p>');
         else

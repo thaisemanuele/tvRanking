@@ -25,6 +25,11 @@ $(document).ready(function () {
         else
             for (var i = 0; i < dados.comedia[id].comments.length; i++)
                 $(".comments").append('<div class="comment"><p>Autor: ' + dados.comedia[id].comments[i].author + '</p><p><span itemprop="comment">' + dados.comedia[id].comments[i].comment + '</span></p></div>');
+        
+        if (dados.comedia[id].description != null) {
+            $("head").append('<meta name="description" content="' + dados.comedia[id].description + '">');
+        }
+        
         if (dados.comedia[id].gallery.length == 0)
             $("#links").append('<p>Não há imagens cadastradas para essa série.</p>');
     }
@@ -109,49 +114,6 @@ $(function () {
         blueimp.Gallery($('#links a'), $('#blueimp-gallery').data());
     });
 
-    $('#video-gallery-button').on('click', function (event) {
-        event.preventDefault();
-        blueimp.Gallery([
-            {
-                title: 'Sintel',
-                href: 'http://media.w3.org/2010/05/sintel/trailer.mp4',
-                type: 'video/mp4',
-                poster: 'http://media.w3.org/2010/05/sintel/poster.png'
-            },
-            {
-                title: 'Big Buck Bunny',
-                href: 'http://upload.wikimedia.org/wikipedia/commons/7/75/' +
-                    'Big_Buck_Bunny_Trailer_400p.ogg',
-                type: 'video/ogg',
-                poster: 'http://upload.wikimedia.org/wikipedia/commons/thumb/7/70/' +
-                    'Big.Buck.Bunny.-.Opening.Screen.png/' +
-                    '800px-Big.Buck.Bunny.-.Opening.Screen.png'
-            },
-            {
-                title: 'Elephants Dream',
-                href: 'http://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/' +
-                    'Elephants_Dream_%28high_quality%29.ogv/' +
-                    'Elephants_Dream_%28high_quality%29.ogv.360p.webm',
-                type: 'video/webm',
-                poster: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/90/' +
-                    'Elephants_Dream_s1_proog.jpg/800px-Elephants_Dream_s1_proog.jpg'
-            },
-            {
-                title: 'LES TWINS - An Industry Ahead',
-                href: 'http://www.youtube.com/watch?v=zi4CIXpx7Bg',
-                type: 'text/html',
-                youtube: 'zi4CIXpx7Bg',
-                poster: 'http://img.youtube.com/vi/zi4CIXpx7Bg/0.jpg'
-            },
-            {
-                title: 'KN1GHT - Last Moon',
-                href: 'http://vimeo.com/73686146',
-                type: 'text/html',
-                vimeo: '73686146',
-                poster: 'http://b.vimeocdn.com/ts/448/835/448835699_960.jpg'
-            }
-        ], $('#blueimp-gallery').data());
-    });
 
 });
 
