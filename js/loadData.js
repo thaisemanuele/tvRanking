@@ -1,5 +1,6 @@
 // Verifica se os dados ja estao na seesao, caso contrario,
 // carrega todo os dados que ja se encontram em JSON para a sessao
+$(document).ready(function(){
 
 if(localStorage.getItem('ActionDataBase') == null){
     $.ajaxSetup({ mimeType: "text/plain" });
@@ -35,3 +36,7 @@ if(localStorage.getItem('UsersDataBase') == null){
         localStorage.setItem('UsersDataBase',JSON.stringify(data));
     });
 }
+
+loadIndex();
+
+});

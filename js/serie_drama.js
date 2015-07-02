@@ -9,8 +9,27 @@ $(document).ready(function(){
             var rating = countStars(dados.drama[id].rating);
             var starring = findActors(id);
             $("title").append(dados.drama[id].title);
-            $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.drama[id].image + '" alt=" poster da serie'+dados.drama[id].title+'"><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' +
-                dados.drama[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '                    </span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.drama[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.drama[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.drama[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.drama[id].description + '</span></p><p>Diretor:<span itemprop="director"> '+dados.drama[id].director+'</span></p><h2>Estrelando</h2><p><ul id="starring">'+starring+'</ul></p><p>Numero de Episodios:<span itemprop="numberOfEpisodes"> '+dados.drama[id].noEpisodes+'</span></p><p>Numero de Temporadas:<span itemprop="numberOfseasons"> '+dados.drama[id].noSeasons+'</span></p><p>Avaliado por <span class="users_number">'+dados.drama[id].reviews+' </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article><div class="row"><div class="span12"><div class="pull-right"><iframe itemprop="trailer" width="420" height="315" src="'+dados.drama[id].trailer+'" frameborder="0" allowfullscreen"></iframe></div>');
+            $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' 
+                + dados.drama[id].image + '" alt=" poster da serie'
+                +dados.drama[id].title+'"><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' 
+                +dados.drama[id].title 
+                + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating 
+                + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' 
+                + dados.drama[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' 
+                + dados.drama[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' 
+                + dados.drama[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' 
+                + dados.drama[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.drama[id].description 
+                + '</span></p><p>Diretor:<span itemprop="director"> '+dados.drama[id].director+'</span></p><h2>Estrelando</h2><p><ul id="starring">'+starring
+                +'</ul></p><p>Numero de Episodios:<span itemprop="numberOfEpisodes"> '+dados.drama[id].noEpisodes
+                +'</span></p><p>Numero de Temporadas:<span itemprop="numberOfseasons"> '+dados.drama[id].noSeasons
+                +'</span></p><p>Avaliado por <span class="users_number">'+dados.drama[id].reviews
+                +' </span>usuários</p></div></div><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
+            if(dados.drama[id].trailer == null){
+                $("#trailer").append('<p>Não há trailer para essa série.</p>');
+            }
+            else
+                $("#trailer").append('<iframe itemprop="trailer" width="420" height="315" src="'+dados.drama[id].trailer
+                +'" frameborder="0" allowfullscreen"></iframe>');
             if(dados.drama[id].comments.length == 0)
                 $(".comments").append('<p>Não há comentários para essa série ainda.</p>');
             else

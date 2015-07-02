@@ -1,9 +1,12 @@
 
-$(document).ready(function(){
+function loadIndex (){
 
-    pageLoader();
-
-    function pageLoader() {
+    var date = new Date();
+    var curDate = null;
+    // Comando do-while para esperar por 1 segundo enquanto os dados encontrados nos JSON são carregados para o localStorage
+    do{
+        curDate = new Date();
+    }while(curDate - date < 1000);
         $("#lastUpdated").html("");
         
         // Ultima atualizacao em acao
@@ -93,7 +96,7 @@ $(document).ready(function(){
             window.open("dramaCompare.html");
         });
 
-    }
+    
     function countStars(rating) {
         var stars = "";
         for (var i = 1; i < 6; i++) {
@@ -107,4 +110,5 @@ $(document).ready(function(){
         }
         return stars;
     }
-});
+}
+
