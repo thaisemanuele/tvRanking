@@ -7,9 +7,13 @@ $(document).ready(function(){
             $(".main-holder").html("");
             var rating = countStars(dados.acao[id].rating);
             $("title").append(dados.acao[id].title);
-            $(".main-holder").html('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.acao[id].image + '" alt=""><div class="show-info col-sm-6 centralize"><h1 class="show-title"><span itemprop="name">' +
+            $(".main-holder").html('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.acao[id].image + '" alt=" poster da serie'
+                +dados.acao[id].title+'"><div class="show-info col-sm-6 centralize"><h1 class="show-title"><span itemprop="name" lang="en">' +
                 dados.acao[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '</span><ul class="more-info"><li><span itemprop="startDate">' + dados.acao[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span> <span itemprop="productionCompany">' + dados.acao[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.acao[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.acao[id].description + '</span></p><p>Avaliado por <span class="users_number">'+dados.acao[id].reviews+' </span>usuários</p></div></div></br><p class="show-info col-sm-6">Avalie essa série também:</p><form class="col-sm-6 starStyle"><input id="input-2c" class="rating" min="0" max="5" step="0.5" data-size="sm" data-symbol="&#xf005;" data-glyphicon="false" data-rating-class="rating-fa" value="0"></form></article>');
             
+            if(dados.acao[id].description != null){
+                $("head").append('<meta name="description" content="'+dados.acao[id].description+'">');
+            }
             if(dados.acao[id].comments.length == 0)
                 $(".comments").append('<p>Não há comentários para essa série ainda.</p>');
             else

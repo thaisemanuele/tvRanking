@@ -11,7 +11,7 @@ $(document).ready(function(){
             $("title").append(dados.drama[id].title);
             $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' 
                 + dados.drama[id].image + '" alt=" poster da serie'
-                +dados.drama[id].title+'"><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name">' 
+                +dados.drama[id].title+'"><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name" lang="en">' 
                 +dados.drama[id].title 
                 + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating 
                 + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' 
