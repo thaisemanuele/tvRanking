@@ -7,7 +7,7 @@ $(document).ready(function () {
     function pageLoader() {
         $(".main-holder").html("");
         var rating = countStars(dados.comedia[id].rating);
-        var starring = findActors(dados.comedia[id].rating);
+        var starring = findActors();
         $("title").append(dados.comedia[id].title);
         $(".main-holder").append('<article itemscope itemtype="http://schema.org/TVSeries" class="col-md-12"><img class="show-img col-sm-4 img-responsive" src="' + dados.comedia[id].image + '" alt=" poster da serie' + dados.comedia[id].title + '"><div class="show-info col-sm-6  centralize"><h1 class="show-title"><span itemprop="name" lang="en">' +
             dados.comedia[id].title + '</span></h1><span class="col-sm-11 col-sm-offset-1 rating-stars">' + rating + '</span><ul class="more-info"><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="startDate">' + dados.comedia[id].year + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].duration + '</li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span><span itemprop="productionCompany">' + dados.comedia[id].channel + '</span></li><li><span class="glyphicon glyphicon-star col-sm-1" aria-hidden="true"></span>' + dados.comedia[id].status + '</li></ul><div class="description"><p><span itemprop="about">' + dados.comedia[id].description + '</span></p><p>Diretor:<span itemprop="director"> '+dados.comedia[id].director+'</span></p><h2>Estrelando</h2><p><ul id="starring">'+starring
@@ -57,9 +57,9 @@ $(document).ready(function () {
             alert("Você deve estar logado para avaliar uma série");
             return;
         }
-        dados.comedia[id].reviews++;
-        dados.comedia[id].rating = (parseFloat(dados.comedia[id].rating) + parseFloat(value)) / dados.comedia[id].reviews
-        console.log(dados.comedia[id].rating);
+        numberReviews = parseInt(dados.comedia[id].reviews);
+        dados.comedia[id].reviews = parseInt(dados.comedia[id].reviews) + 1;
+        dados.comedia[id].rating = (parseFloat(dados.comedia[id].rating)*parseInt(numberReviews) + parseFloat(value)) / parseInt(dados.comedia[id].reviews);
         $('#input-2c').rating('destroy');
         localStorage.setItem('ComedyDataBase', JSON.stringify(dados));
     });

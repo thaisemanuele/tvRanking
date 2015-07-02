@@ -62,8 +62,9 @@ $(document).ready(function () {
             alert("Você deve estar logado para avaliar uma série");
             return;
         }
-        dados.crime[id].reviews++;
-        dados.crime[id].rating = (parseFloat(dados.crime[id].rating) + parseFloat(value)) / dados.crime[id].reviews
+        numberReviews = dados.crime[id].reviews;
+        dados.crime[id].reviews = parseInt(dados.crime[id].reviews) + 1;
+        dados.crime[id].rating = (parseFloat(dados.crime[id].rating)*parseInt(numberReviews) + parseFloat(value)) / parseInt(dados.crime[id].reviews);
         console.log(dados.crime[id].rating);
         $('#input-2c').rating('destroy');
         localStorage.setItem('CrimeDataBase', JSON.stringify(dados));

@@ -54,8 +54,9 @@ $(document).ready(function () {
             alert("Você deve estar logado para avaliar uma série");
             return;
         }
-        dados.drama[id].reviews++;
-        dados.drama[id].rating = (parseFloat(dados.drama[id].rating) + parseFloat(value)) / dados.drama[id].reviews
+        numberReviews = dados.drama[id].reviews;
+        dados.drama[id].reviews = parseInt(dados.drama[id].reviews + 1);
+        dados.drama[id].rating = (parseFloat(dados.drama[id].rating)*parseInt(numberReviews) + parseFloat(value)) / parseInt(dados.drama[id].reviews);
         console.log(dados.drama[id].rating);
         $('#input-2c').rating('destroy');
         localStorage.setItem('DramaDataBase', JSON.stringify(dados));
