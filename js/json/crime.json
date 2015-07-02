@@ -12,6 +12,14 @@
                 "description": "Annalise Keating é uma brilhante e carismática professora de direito, que se vê tendo que colocar em prática os ensinamentos das suas aulas",
                 "reviews": "1",
                 "image": "img/posters/htgawm.jpg",
+                "noSeasons":"1",
+                "noEpisodes":"15",
+                "director":"Peter Nowalk",
+                "trailer":"https://www.youtube.com/embed/ECP1om4esKc",
+                "starring": [
+                    "Viola Davis",
+                    "Alfred Enoch"
+                ],
                 "gallery": [
 
                     ],
@@ -38,7 +46,17 @@
                 "description": "Michael Scofield é propositalmente encarcerado em uma penitenciária estatal para libertar seu irmão, condenado por um crime que não cometeu.",
                 "reviews": "1",
                 "image": "img/posters/pbrk.jpg",
-                "images": "2",
+                "noSeasons":"4",
+                "noEpisodes":"80",
+                "director":"Paul Scheuring",
+                "trailer":"https://www.youtube.com/embed/AL9zLctDJaU",
+                "starring": [
+                    "Dominic Purcell",
+                    "Wentworth Miller",
+                ],
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -54,6 +72,14 @@
                 "description": "A série segue o detetive James Gordon, enquanto ele luta contra vilões e corrupção na Gotham pré-Batman.",
                 "reviews": "1",
                 "image": "img/posters/gotham.jpg",
+                "noSeasons":"1",
+                "noEpisodes":"22",
+                "director":"Bruno Heller",
+                "trailer":"https://www.youtube.com/embed/0d1zpt6k5OI",
+                "starring": [
+                    "Ben McKenzie",
+                    "Donal Logue"
+                ],
                 "gallery": [
 
                     ],
@@ -72,6 +98,14 @@
                 "description": "Agentes especiais de um time do FBI especialistas em analisar mentes criminosas, enfrentando os criminosos mais perigosos do mundo",
                 "reviews": "1",
                 "image": "img/posters/cminds.jpg",
+                "noSeasons":"10",
+                "noEpisodes":"235",
+                "director":"Jeff Davis",
+                "trailer":"https://www.youtube.com/embed/ZJ69iVGunVg",
+                "starring": [
+                    "David Rossi",
+                    "Derek Morgan"
+                ],
                 "gallery": [
 
                     ],
@@ -90,6 +124,14 @@
                 "description": "Quando Patrick Jane tem sua família brutalmente assassinada por um serial killer, ele usa suas habilidades de vidente para ajudar a CBI em suas investigações.",
                 "reviews": "1",
                 "image": "img/posters/tmtlst.jpg",
+                "noSeasons":"7",
+                "noEpisodes":"151",
+                "director":"Bruno Heller",
+                "trailer":"https://www.youtube.com/embed/nn2Q69pSC_M",
+                "starring": [
+                    "Simon Baker",
+                    "Robin Tunney"
+                ],
                 "gallery": [
 
                     ],
@@ -108,7 +150,17 @@
                 "description": "Matt Murdock, que ficou cego na sua juventude, luta contra a injustiça durante o dia como advogado e durante a noite como super-herói.",
                 "reviews": "1",
                 "image": "img/posters/msdd.jpg",
-                "images": "0",
+                "noSeasons":"1",
+                "noEpisodes":"13",
+                "director":"Drew Goddard",
+                "trailer":"https://www.youtube.com/embed/KQzRs6UCbuI",
+                "starring": [
+                    "Charlie Cox",
+                    "Deborah Ann Woll"
+                ],
+                "gallery": [
+
+                    ],
                 "comments": [
                     ]
             },
@@ -124,6 +176,14 @@
                 "description": "A história de um serial killer que trabalha como especialista forense. Ele passa o dia solucionando crimes e a noite cometendo-os",
                 "reviews": "1",
                 "image": "img/posters/dex.jpg",
+                "noSeasons":"8",
+                "noEpisodes":"96",
+                "director":"James Manos Jr.",
+                "trailer":"https://www.youtube.com/embed/R6_qsTCBns8",
+                "starring": [
+                    "Michael C. Hall",
+                    "Jennifer Carpenter"
+                ],
                 "gallery": [
 
                     ],
@@ -142,6 +202,14 @@
                 "description": "A história de quando o Saul Goodman é conhecido como Jimmy McGill, um advogado procurando definir o seu futuro.",
                 "reviews": "1",
                 "image": "img/posters/bcs.jpg",
+                "noSeasons":"1",
+                "noEpisodes":"23",
+                "director":"Vince Gilligan",
+                "trailer":"https://www.youtube.com/embed/9q4qzYrHVmI",
+                "starring": [
+                    "Bob Odenkirk",
+                    "Jonathan Banks"
+                ],
                 "gallery": [
 
                     ],
@@ -160,6 +228,14 @@
                 "description": "Um campo de força invisível e misterioso desce sobre uma cidade fictícia nos Estados Unidos, prendendo os moradores e separando-os do resto da civilização.",
                 "reviews": "1",
                 "image": "img/posters/utd.jpg",
+                "noSeasons":"3",
+                "noEpisodes":"39",
+                "director":"Brian K. Vaughan",
+                "trailer":"https://www.youtube.com/embed/OvXMGYeBofY",
+                "starring": [
+                    "Mike Vogel",
+                    "Rachelle Lefevre"
+                ],
                 "gallery": [
 
                     ],
@@ -178,7 +254,15 @@
                 "description": "Um dos fugitivos mais procurados do FBI se rende e diz que tem o mesmo interesse do que o FBI, acabar com criminosos e terroristas.",
                 "reviews": "1",
                 "image": "img/posters/tbl.jpg",
-                "gallery": [
+                "noSeasons":"2",
+                "noEpisodes":"44",
+                "director":" Jon Bokenkamp",
+                "trailer":"https://www.youtube.com/embed/JGBIimq1I3A",
+                "starring": [
+                    "James Spader",
+                    "Megan Boone"
+                ],
+                 "gallery": [
 
                     ],
                 "comments": [
