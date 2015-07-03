@@ -110,7 +110,13 @@ function saveSerie(){
 		status = "Finalizada";
 	var duration = document.getElementById("time").value;
 	var producer = document.getElementById("producer").value;
-	var id;
+	var director = document.getElementById("director").value;
+    var starring = document.getElementById("starring").value;
+    var episodes = document.getElementById("episodes").value;
+    var season = document.getElementById("season").value;
+    var trailer = document.getElementById("trailer").value;
+
+    var id;
 	if(serieCategory == "Ação"){
 		id = category.acao.length;
 	}
@@ -134,6 +140,12 @@ function saveSerie(){
         "description": description,
         "reviews": "1",
         "image": imgAsDataURL[0],
+        "noSeasons": season,
+        "noEpisodes": episodes,
+        "director":director,
+        "trailer": trailer,
+        "starring": [starring
+        ],
         "gallery": imgAsDataURL,
         "comments": [
                 ]
